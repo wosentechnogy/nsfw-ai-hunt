@@ -55,7 +55,7 @@ export default function SubmitToolPage() {
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Button asChild>
-          <a href="mailto:contact@nsfwaihunt.com?subject=Tool%20submission%20for%20NSFW%20AI%20Hunt">
+          <a href="mailto:wosenkeji@gmail.com?subject=Tool%20submission%20for%20NSFW%20AI%20Hunt">
             Email submission
             <ExternalLink className="size-4" aria-hidden="true" />
           </a>

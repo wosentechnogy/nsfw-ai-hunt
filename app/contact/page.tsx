@@ -30,14 +30,15 @@ export default function ContactPage() {
           Email
         </div>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          Preferred contact:{" "}
-          <a className="underline underline-offset-4" href="mailto:contact@nsfwaihunt.com">
-            contact@nsfwaihunt.com
+          Launch inbox:{" "}
+          <a className="underline underline-offset-4" href="mailto:wosenkeji@gmail.com">
+            wosenkeji@gmail.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          Vendors can also start with the structured submission page so pricing, policy, and
-          affiliate fields stay separate.
+          Brand email routing for contact@nsfwaihunt.com is being prepared. Vendors can also start
+          with the structured submission page so pricing, policy, and affiliate fields stay
+          separate.
         </p>
       </section>
 

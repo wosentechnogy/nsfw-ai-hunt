@@ -21,7 +21,7 @@ const sections = [
   {
     title: "Contact",
     body:
-      "For privacy questions or listing corrections, contact contact@nsfwaihunt.com. Do not send explicit media or sensitive personal data unless it is necessary for the request."
+      "For privacy questions or listing corrections, contact wosenkeji@gmail.com during launch. Do not send explicit media or sensitive personal data unless it is necessary for the request."
   }
 ] as const;
 
