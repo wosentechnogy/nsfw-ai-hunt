@@ -282,6 +282,40 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
         />
       </section>
 
+      {tool.commissionType || tool.commissionRate || tool.cookieDuration || tool.affiliateNetwork ? (
+        <section className="py-8">
+          <SectionHeader eyebrow={<ExternalLink className="size-4" aria-hidden="true" />} title="Affiliate snapshot">
+            Public program notes help the team separate approved affiliate opportunities from simple official-site outbound links.
+          </SectionHeader>
+          <div className="mt-5">
+            <DataTable
+              rows={[
+                {
+                  label: "Program status",
+                  value: tool.affiliateProgramStatus
+                },
+                {
+                  label: "Commission type",
+                  value: tool.commissionType ?? "No public commission type captured yet."
+                },
+                {
+                  label: "Commission notes",
+                  value: tool.commissionRate ?? "No public commission notes captured yet."
+                },
+                {
+                  label: "Cookie notes",
+                  value: tool.cookieDuration ?? "No public cookie notes captured yet."
+                },
+                {
+                  label: "Network or platform",
+                  value: tool.affiliateNetwork ?? "No public network attribution captured yet."
+                }
+              ]}
+            />
+          </div>
+        </section>
+      ) : null}
+
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-md border bg-card p-5">
           <h2 className="text-xl font-semibold">Pros and cons</h2>

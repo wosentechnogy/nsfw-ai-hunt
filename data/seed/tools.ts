@@ -506,6 +506,14 @@ const rawDirectoryTools = [
       "Privacy review focuses on account requirements, payment options, and visible data policy language.",
     pricingModel: "subscription",
     affiliateProgramStatus: "applied",
+    commissionType:
+      "Candy AI supports both revshare and one-time CPS or PPS structures, depending on the offer.",
+    commissionRate:
+      "Candy AI's public terms confirm lifetime revshare and one-time CPS or PPS offers, but they do not disclose a public percentage.",
+    cookieDuration:
+      "Candy AI's public affiliate terms do not disclose a cookie window on the public page.",
+    affiliateNetwork:
+      "Direct Candy AI applications are live, with public affiliate terms for FirstPromoter and Everflow.",
     lastCheckedAt: "2026-06-14"
   },
   {
@@ -533,6 +541,12 @@ const rawDirectoryTools = [
       "Privacy review focuses on account controls, public profile settings, and payment visibility.",
     pricingModel: "freemium",
     affiliateProgramStatus: "applied",
+    commissionRate:
+      "CrushOn AI has a live Tapfiliate signup page, but the public signup flow does not disclose the commission percentage.",
+    cookieDuration:
+      "CrushOn AI's public signup flow does not disclose a cookie duration on the landing page.",
+    affiliateNetwork:
+      "CrushOn AI uses a Tapfiliate signup flow for affiliates.",
     lastCheckedAt: "2026-06-14"
   },
   {
@@ -560,6 +574,14 @@ const rawDirectoryTools = [
       "Privacy review focuses on account identity, app access, and retention policy visibility.",
     pricingModel: "subscription",
     affiliateProgramStatus: "none",
+    commissionType:
+      "Nomi runs a recurring revenue-share affiliate program for paid subscriptions.",
+    commissionRate:
+      "Nomi publicly advertises 30% lifetime recurring commissions on monthly, quarterly, and yearly subscriptions.",
+    cookieDuration:
+      "Nomi's public affiliate terms describe last-link attribution but do not publish a separate cookie duration field.",
+    affiliateNetwork:
+      "Nomi applications are submitted by Google Form, with accepted affiliates managed through Rewardful.",
     lastCheckedAt: "2026-06-14"
   },
   {
@@ -610,7 +632,15 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account settings, payment channels, and data policy visibility.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "applied",
+    affiliateProgramStatus: "none",
+    commissionType:
+      "Kindroid currently documents referral rewards in product credits rather than a cash affiliate payout.",
+    commissionRate:
+      "A successful paid referral earns 1 referral credit redeemable for in-product benefits, not a cash commission.",
+    cookieDuration:
+      "Kindroid attributes the first qualifying referrer before the new user's first paid subscription.",
+    affiliateNetwork:
+      "Kindroid currently documents a referral-credit program rather than a public cash affiliate network.",
     lastCheckedAt: "2026-06-14"
   },
   {
@@ -663,6 +693,12 @@ const rawDirectoryTools = [
       "Privacy review focuses on account identity, payment methods, and visible data controls.",
     pricingModel: "subscription",
     affiliateProgramStatus: "none",
+    commissionType: "Muah AI uses a direct revenue-share affiliate program.",
+    commissionRate: "Muah AI publicly advertises a 40% commission on total paid amount.",
+    cookieDuration:
+      "Muah AI's public affiliate landing page does not disclose a cookie duration.",
+    affiliateNetwork:
+      "Muah AI runs a direct affiliate dashboard with live click, signup, paid-amount, and payout reporting.",
     lastCheckedAt: "2026-06-14"
   },
   {
@@ -688,6 +724,12 @@ const rawDirectoryTools = [
       "Privacy review focuses on account requirements, billing visibility, and content retention notes.",
     pricingModel: "credits",
     affiliateProgramStatus: "applied",
+    commissionRate:
+      "SoulGen's official site links to an affiliate application, but the public page does not disclose a commission percentage.",
+    cookieDuration:
+      "SoulGen's official public pages do not disclose a cookie duration for affiliates.",
+    affiliateNetwork:
+      "SoulGen links to a direct affiliate application from the official site footer.",
     lastCheckedAt: "2026-06-14"
   },
   {
