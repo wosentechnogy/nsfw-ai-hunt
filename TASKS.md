@@ -469,6 +469,8 @@ Acceptance criteria:
 
 ### Task 29: Production Deploy
 
+Status: In progress on 2026-06-23. GitHub, Vercel production deploy, Cloudflare DNS, custom domain, and Vercel Web Analytics are live. Supabase production project/env and Google/Bing sitemap submission still require account credentials or browser login.
+
 Goal: Launch.
 
 Steps:

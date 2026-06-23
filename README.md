@@ -8,6 +8,8 @@ Primary domain: `nsfwaihunt.com`
 
 Brand: `NSFW AI Hunt`
 
+Live production site: `https://nsfwaihunt.com`
+
 ## Read Order
 
 Before implementation, read:
@@ -31,11 +33,12 @@ Before implementation, read:
 - `WORKFLOW.md`: agent workflow.
 - `AGENTS.md`: Codex/general agent rules.
 - `CLAUDE.md`: Claude Code rules.
+- `COMMERCIAL_LAUNCH_STATUS.md`: current production, analytics, Supabase, SEO submission, and monetization status.
 
 ## Current Next Step
 
 Start with `TASKS.md`:
 
-Task 29: Production Deploy
+Task 29: Production Deploy is in progress.
 
-Tasks 1-23 and 25-28 are complete for the current preview dataset. Task 24 was skipped by user request and should be resumed later to expand from 20 publishable seed tools to the full 100-tool launch target.
+GitHub, Vercel production hosting, Cloudflare DNS, custom domain, and Vercel Analytics are live. Supabase production env, search-console submission, affiliate URL approvals, and the full 100-tool dataset remain before true commercial launch completion.
