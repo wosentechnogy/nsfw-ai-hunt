@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
 
 function DataTable({ rows }: Readonly<{ rows: readonly DetailRow[] }>) {
   return (
-    <div className="overflow-x-auto rounded-md border">
+    <div className="max-w-full overflow-x-auto rounded-md border">
       <table className="w-full min-w-[560px] border-collapse text-sm">
         <tbody className="divide-y">
           {rows.map((row) => (
@@ -247,7 +247,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <SectionHeader
             eyebrow={<TableProperties className="size-4" aria-hidden="true" />}
             title="Feature matrix"
@@ -259,7 +259,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <SectionHeader eyebrow={<CalendarCheck className="size-4" aria-hidden="true" />} title="Pricing">
             Pricing and payment signals are separated from affiliate tracking fields.
           </SectionHeader>
