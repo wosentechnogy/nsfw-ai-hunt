@@ -20,6 +20,8 @@ Last updated: 2026-06-23
 - Vercel Web Analytics and Speed Insights are enabled at the project level.
 - Vercel Analytics and Speed Insights components are installed in the Next.js layout.
 - `NEXT_PUBLIC_SITE_URL` is set for Vercel Production and Development.
+- Cloudflare Email Routing is enabled with MX, SPF, and DKIM DNS records.
+- The destination address `wosenkeji@gmail.com` exists in Cloudflare Email Routing and is awaiting email verification.
 
 ## Not Yet Complete
 
@@ -28,6 +30,7 @@ Last updated: 2026-06-23
 - The database migration in `db/migrations/202606140001_initial_schema.sql` has not been applied to a production Supabase project.
 - Outbound redirects work, but click rows are not persisted until Supabase env vars and schema are configured.
 - Google Search Console and Bing Webmaster sitemap submission require account login.
+- `contact@nsfwaihunt.com`, `partners@nsfwaihunt.com`, and `admin@nsfwaihunt.com` routing rules cannot be created until `wosenkeji@gmail.com` is verified in Cloudflare Email Routing.
 - The dataset is still the preview launch set; Task 24 must resume to reach the 100-tool launch target.
 - Most outbound URLs are official URLs rather than approved affiliate tracking URLs.
 
@@ -41,6 +44,7 @@ Do not commit these values to the repository.
 - Google Search Console access for `wosenkeji@gmail.com`.
 - Bing Webmaster access.
 - Approved affiliate URLs and network metadata.
+- Cloudflare Email Routing verification email approval for `wosenkeji@gmail.com`.
 
 ## Next Commercial Steps
 
@@ -49,5 +53,6 @@ Do not commit these values to the repository.
 3. Add Supabase env vars to Vercel Production, Preview, and Development.
 4. Redeploy production after env vars are added.
 5. Submit `https://nsfwaihunt.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
-6. Replace priority official URLs with approved affiliate URLs while keeping official URLs separate.
-7. Resume Task 24 and expand from 20 tools to the 100-tool launch dataset.
+6. Verify `wosenkeji@gmail.com` from the Cloudflare Email Routing email, then create `contact@`, `partners@`, and `admin@` forwarding rules.
+7. Replace priority official URLs with approved affiliate URLs while keeping official URLs separate.
+8. Resume Task 24 and expand from 20 tools to the 100-tool launch dataset.

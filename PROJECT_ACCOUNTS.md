@@ -1,6 +1,6 @@
 # PROJECT ACCOUNTS
 
-Last updated: 2026-06-14
+Last updated: 2026-06-23
 
 This file stores non-secret account context only. Do not store passwords, API keys, recovery codes, private keys, seed phrases, or payout details in this repository.
 
@@ -65,10 +65,9 @@ This file stores non-secret account context only. Do not store passwords, API ke
 
 ## Next Account Tasks
 
-1. Confirm domain registration for `nsfwaihunt.com`.
-2. Add domain to Cloudflare.
-3. Create GitHub private repository.
-4. Connect Vercel to GitHub.
-5. Create Supabase project.
-6. Add Google Search Console domain property after DNS is active.
-7. Create project email routing, such as `contact@nsfwaihunt.com`.
+1. Create Supabase project.
+2. Add Supabase env vars to Vercel.
+3. Verify `wosenkeji@gmail.com` for Cloudflare Email Routing.
+4. Create project email routes such as `contact@nsfwaihunt.com`.
+5. Add Google Search Console domain property and submit sitemap.
+6. Add Bing Webmaster property and submit sitemap.

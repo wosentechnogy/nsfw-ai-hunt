@@ -15,21 +15,22 @@ This checklist captures what the founder should prepare before and during implem
 ### Cloudflare
 
 - Account email: `wosenkeji@gmail.com`.
-- Add the domain.
+- Add the domain. Completed for `nsfwaihunt.com`.
 - Enable 2FA.
-- Use Cloudflare DNS.
-- Later: configure WAF, CDN, redirects, and email routing.
+- Use Cloudflare DNS. Completed for apex and `www`.
+- Email Routing DNS is enabled; verify `wosenkeji@gmail.com` before creating forwarding rules.
+- Later: configure WAF and any advanced redirects.
 
 ### GitHub
 
 - Account email: `wosenkeji@gmail.com`.
-- Create a private repo for this project.
+- Create a private repo for this project. Completed: `wosenkeji-creator/nsfw-ai-hunt`.
 - Keep repo clean and avoid committing secrets.
 
 ### Vercel
 
 - Account email: `wosenkeji@gmail.com`.
-- Connect GitHub.
+- Connect GitHub. Completed for `nsfw-ai-hunt`.
 - Free tier is fine for v1.
 
 ### Supabase
@@ -59,11 +60,17 @@ This checklist captures what the founder should prepare before and during implem
 
 Use Cloudflare Email Routing or an email provider.
 
+Current status:
+
+- Cloudflare Email Routing is enabled for `nsfwaihunt.com`.
+- The destination `wosenkeji@gmail.com` is created but still needs verification from the Cloudflare email.
+- Create forwarding rules only after verification succeeds.
+
 Suggested addresses:
 
-- `contact@domain.com`
-- `admin@domain.com`
-- `partners@domain.com`
+- `contact@nsfwaihunt.com`
+- `admin@nsfwaihunt.com`
+- `partners@nsfwaihunt.com`
 
 Use for:
 
