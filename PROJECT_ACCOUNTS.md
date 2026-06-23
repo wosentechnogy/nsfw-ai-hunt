@@ -13,13 +13,14 @@ This file stores non-secret account context only. Do not store passwords, API ke
 
 ### Cloudflare
 
-- Account email: `wosenkeji@gmail.com`
+- Account email: `985064198@qq.com`
 - Purpose:
   - DNS
   - CDN
   - WAF
   - Email routing
   - Future Cloudflare Workers/R2/KV if needed
+- Note: All 6 portfolio domains are managed under this single Cloudflare account (confirmed 2026-06-23)
 
 ### GitHub
 
