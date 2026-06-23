@@ -9,7 +9,7 @@ Last updated: 2026-06-23
 - Vercel fallback domain: `https://nsfw-ai-hunt.vercel.app`
 - GitHub repository: `https://github.com/wosenkeji-creator/nsfw-ai-hunt`
 - Vercel project: `wosenkeji-creators-projects/nsfw-ai-hunt`
-- Latest verified production deployment: `dpl_8ow9nkcKbV6JXWUki9cmBXaFzLuR`
+- Latest verified production deployment: `dpl_DjMZShT97mBjd66WTHc3MaefoDwS`
 
 ## Completed
 
@@ -22,6 +22,7 @@ Last updated: 2026-06-23
 - `NEXT_PUBLIC_SITE_URL` is set for Vercel Production and Development.
 - Cloudflare Email Routing is enabled with MX, SPF, and DKIM DNS records.
 - The destination address `wosenkeji@gmail.com` exists in Cloudflare Email Routing and is awaiting email verification.
+- Public contact and submission pages use the reachable launch inbox `wosenkeji@gmail.com` until branded email forwarding is verified.
 
 ## Not Yet Complete
 
