@@ -1262,6 +1262,157 @@ const rawDirectoryTools = [
     pricingModel: "freemium",
     affiliateProgramStatus: "none",
     lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "hera-haven",
+    name: "HeraHaven",
+    tagline: "AI companion product tracked for character setup, chat access, and plan clarity.",
+    description:
+      "HeraHaven is tracked for users comparing AI companion tools by character setup workflow, chat availability, subscription signals, privacy notes, and visible policy boundaries.",
+    websiteUrl: "https://herahaven.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://herahaven.ai",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 57,
+    categorySlugs: ["ai-girlfriend-apps", "character-roleplay-ai"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for companion chat policy fit, account requirements, and visible usage boundaries.",
+    privacySummary:
+      "Privacy review focuses on account setup, subscription visibility, and official policy language.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "couple-me",
+    name: "Couple.me",
+    tagline: "AI companion product tracked for web access, relationship-style chat, and pricing posture.",
+    description:
+      "Couple.me is tracked for buyers comparing AI companion tools by web availability, character interaction flow, free access posture, payment signals, and policy visibility.",
+    websiteUrl: "https://couple.me",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://couple.me",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 55,
+    categorySlugs: ["ai-girlfriend-apps", "private-adult-ai-chat"],
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked conservatively for companion chat restrictions and official usage policy language.",
+    privacySummary:
+      "Privacy review focuses on account requirements, payment-path visibility, and support-policy signals.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "nectar-ai",
+    name: "Nectar AI",
+    tagline: "AI companion platform tracked for chat, image signals, and subscription clarity.",
+    description:
+      "Nectar AI is tracked for users comparing companion platforms by chat access, character presentation, image-related feature signals, pricing model, and visible restrictions.",
+    websiteUrl: "https://nectar.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://nectar.ai",
+    status: "published",
+    editorScore: 7.0,
+    popularityScore: 63,
+    categorySlugs: ["ai-girlfriend-apps", "nsfw-ai-image-generators"],
+    supportsNsfwChat: true,
+    supportsImageGeneration: true,
+    supportsCharacterCreation: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for companion and image-feature restrictions, with no explicit media hosted in the directory.",
+    privacySummary:
+      "Privacy review focuses on account requirements, checkout posture, and accessible policy language.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "ai-dungeon",
+    name: "AI Dungeon",
+    tagline: "Interactive story platform tracked as a roleplay and creative-chat comparison baseline.",
+    description:
+      "AI Dungeon is tracked as a creative roleplay baseline for users comparing interactive story tools by model access, web and mobile availability, subscription posture, and policy restrictions.",
+    websiteUrl: "https://aidungeon.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://aidungeon.com",
+    status: "published",
+    editorScore: 7.0,
+    popularityScore: 70,
+    categorySlugs: ["character-roleplay-ai"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a roleplay baseline where current content policy and model restrictions should be checked.",
+    privacySummary:
+      "Privacy review focuses on account requirements, subscription posture, and story-data policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "novelai",
+    name: "NovelAI",
+    tagline: "Story and image generation product tracked for creative roleplay and privacy posture.",
+    description:
+      "NovelAI is tracked for users comparing creative writing and image tools by subscription model, generation controls, privacy posture, and policy restrictions across roleplay use cases.",
+    websiteUrl: "https://novelai.net",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://novelai.net",
+    status: "published",
+    editorScore: 7.2,
+    popularityScore: 72,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsCharacterCreation: true,
+    supportsAnimeStyle: true,
+    hasWebApp: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for creative-generation restrictions and policy clarity, not as hosted media content.",
+    privacySummary:
+      "Privacy review focuses on account setup, subscription handling, and visible data-policy commitments.",
+    pricingModel: "subscription",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "hammer-ai",
+    name: "HammerAI",
+    tagline: "AI character chat product tracked for access model, roleplay setup, and privacy notes.",
+    description:
+      "HammerAI is tracked for users comparing AI character chat tools by access model, roleplay setup, free evaluation path, model expectations, and privacy posture.",
+    websiteUrl: "https://www.hammerai.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.hammerai.com",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 56,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-chatbots"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked for character roleplay policy boundaries and safe buyer-facing notes.",
+    privacySummary:
+      "Privacy review focuses on account requirements, access model, and visible policy language.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
   }
 ] as const satisfies readonly ToolInput[];
 
