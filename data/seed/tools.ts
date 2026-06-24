@@ -1036,6 +1036,232 @@ const rawDirectoryTools = [
     pricingModel: "subscription",
     affiliateProgramStatus: "none",
     lastCheckedAt: "2026-06-22"
+  },
+  {
+    slug: "spicychat-ai",
+    name: "SpicyChat AI",
+    tagline: "Character chat platform tracked for roleplay depth, free access, and policy notes.",
+    description:
+      "SpicyChat AI is tracked for users comparing character chat products by roleplay setup, free evaluation paths, web access, and the visibility of current adult-use policy boundaries.",
+    websiteUrl: "https://spicychat.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://spicychat.ai",
+    status: "published",
+    editorScore: 7.2,
+    popularityScore: 68,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-chatbots"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    supportsAnimeStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for character chat policy boundaries, free access limits, and safe directory presentation.",
+    privacySummary:
+      "Privacy review focuses on account requirements, visible policy language, and checkout posture.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "nastia-ai",
+    name: "Nastia AI",
+    tagline: "AI companion product tracked for chat access, privacy notes, and subscription posture.",
+    description:
+      "Nastia AI is tracked for buyers comparing AI companion products by chat availability, plan model, account requirements, and policy clarity before visiting the official site.",
+    websiteUrl: "https://www.nastia.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.nastia.ai",
+    status: "published",
+    editorScore: 7.1,
+    popularityScore: 64,
+    categorySlugs: ["ai-girlfriend-apps", "private-adult-ai-chat"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for companion chat policy fit and visible usage boundaries, without hosting explicit media.",
+    privacySummary:
+      "Privacy review focuses on account setup, data policy visibility, and payment-path clarity.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "chub-ai",
+    name: "Chub AI",
+    tagline: "Character hub tracked for roleplay discovery, setup complexity, and policy fit.",
+    description:
+      "Chub AI is tracked for users comparing character roleplay hubs by discovery workflow, model setup expectations, free access posture, and current policy signals.",
+    websiteUrl: "https://chub.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://chub.ai",
+    status: "published",
+    editorScore: 7.1,
+    popularityScore: 66,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-chatbots"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    supportsAnimeStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked for roleplay policy boundaries and character discovery workflows, with conservative buyer notes.",
+    privacySummary:
+      "Privacy review focuses on account requirements, public profile posture, and model connection expectations.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "botify-ai",
+    name: "Botify AI",
+    tagline: "AI character app tracked for mobile access, roleplay features, and plan signals.",
+    description:
+      "Botify AI is tracked as an AI character product for users comparing mobile availability, roleplay features, payment signals, and policy boundaries across companion-style apps.",
+    websiteUrl: "https://botify.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://botify.ai",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 63,
+    categorySlugs: ["character-roleplay-ai", "ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked conservatively for character interaction policy boundaries and current product restrictions.",
+    privacySummary:
+      "Privacy review focuses on mobile account requirements, subscription visibility, and official policy wording.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "joyland-ai",
+    name: "Joyland AI",
+    tagline: "Character roleplay product tracked for chat workflows, free access, and policy notes.",
+    description:
+      "Joyland AI is tracked for buyers comparing character roleplay tools by web access, character creation workflow, free-plan signals, and current policy clarity.",
+    websiteUrl: "https://www.joyland.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.joyland.ai",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 62,
+    categorySlugs: ["character-roleplay-ai"],
+    supportsCharacterCreation: true,
+    supportsAnimeStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for roleplay policy fit and visible restriction language rather than assumed adult-use support.",
+    privacySummary:
+      "Privacy review focuses on account requirements, public character visibility, and payment posture.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "sakura-ai",
+    name: "Sakura AI",
+    tagline: "Companion chat app tracked for mobile access, character features, and policy posture.",
+    description:
+      "Sakura AI is tracked for users comparing AI companion and character chat products by app access, interaction features, plan model, and current restriction notes.",
+    websiteUrl: "https://www.sakura.fm",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.sakura.fm",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 61,
+    categorySlugs: ["ai-girlfriend-apps", "character-roleplay-ai"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked conservatively for companion chat policy boundaries and official usage restrictions.",
+    privacySummary:
+      "Privacy review focuses on mobile account requirements, payment visibility, and data policy language.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "talkie-ai",
+    name: "Talkie AI",
+    tagline: "AI character app tracked for mobile-first discovery, roleplay, and pricing signals.",
+    description:
+      "Talkie AI is tracked for users comparing mobile-first AI character products by character discovery, free access posture, subscription signals, and policy restrictions.",
+    websiteUrl: "https://www.talkie-ai.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.talkie-ai.com",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 65,
+    categorySlugs: ["character-roleplay-ai", "ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a character app with policy restrictions that should be checked before adult-use assumptions.",
+    privacySummary:
+      "Privacy review focuses on app account requirements, subscription visibility, and official policy wording.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "replika",
+    name: "Replika",
+    tagline: "Mainstream AI companion app tracked as a policy-aware comparison baseline.",
+    description:
+      "Replika is tracked as a mainstream AI companion baseline for users comparing mobile access, subscription posture, privacy policy visibility, and feature restrictions against adult-focused alternatives.",
+    websiteUrl: "https://replika.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://replika.com",
+    status: "published",
+    editorScore: 6.7,
+    popularityScore: 72,
+    categorySlugs: ["ai-girlfriend-apps", "private-adult-ai-chat"],
+    supportsVoice: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a mainstream companion benchmark where current policy restrictions should be checked carefully.",
+    privacySummary:
+      "Privacy review focuses on mobile account requirements, subscription posture, and visible privacy-policy language.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
+  },
+  {
+    slug: "anima-ai",
+    name: "Anima AI",
+    tagline: "AI companion app tracked for chat access, mobile availability, and pricing clarity.",
+    description:
+      "Anima AI is tracked for users comparing AI companion apps by chat features, mobile availability, subscription posture, free access signals, and current policy notes.",
+    websiteUrl: "https://myanima.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://myanima.ai",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 58,
+    categorySlugs: ["ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked conservatively for companion chat restrictions and official product policy language.",
+    privacySummary:
+      "Privacy review focuses on account requirements, app access, subscription visibility, and policy disclosures.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-06-24"
   }
 ] as const satisfies readonly ToolInput[];
 
