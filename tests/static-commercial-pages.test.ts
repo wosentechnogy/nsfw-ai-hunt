@@ -8,6 +8,7 @@ const commercialRoutes = [
   "/about",
   "/contact",
   "/submit-tool",
+  "/advertise",
   "/privacy",
   "/terms",
   "/affiliate-disclosure",

@@ -19,6 +19,7 @@ Last updated: 2026-06-24
 - Cloudflare DNS is active for the apex and `www` hostnames.
 - `https://nsfwaihunt.com`, `https://nsfwaihunt.com/sitemap.xml`, and `https://nsfwaihunt.com/go/candy-ai` return expected production responses.
 - `https://nsfwaihunt.com/tools/nomi-ai` renders the affiliate snapshot on mobile, includes the public `30% lifetime recurring` Nomi program note, has no document-level horizontal overflow at a 390px viewport, and contains no `img` or `video` media tags.
+- A labeled commercial partnership page exists at `/advertise` for sponsored placements, affiliate partnerships, and vendor data updates.
 - Vercel Web Analytics and Speed Insights are enabled at the project level.
 - Vercel Analytics and Speed Insights components are installed in the Next.js layout.
 - `NEXT_PUBLIC_SITE_URL` is set for Vercel Production and Development.
@@ -37,6 +38,7 @@ Last updated: 2026-06-24
 - The dataset is still the preview launch set; Task 24 must resume to reach the 100-tool launch target.
 - Most outbound URLs are official URLs rather than approved affiliate tracking URLs.
 - GitHub CLI authentication for `wosenkeji-creator` is currently invalid, although regular `git push` to `origin/master` works through the existing Git credential path.
+- The `/advertise` page uses the launch inbox until branded partner email routing is verified.
 
 ## Required Manual Inputs
 

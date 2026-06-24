@@ -34,9 +34,9 @@ export const siteConfig = {
     { title: "About", href: "/about" },
     { title: "Contact", href: "/contact" },
     { title: "Submit a tool", href: "/submit-tool" },
+    { title: "Advertise", href: "/advertise" },
     { title: "Privacy", href: "/privacy" },
     { title: "Terms", href: "/terms" },
     { title: "Affiliate disclosure", href: "/affiliate-disclosure" }
   ]
 } as const satisfies SiteConfig;
-
