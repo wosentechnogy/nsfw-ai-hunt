@@ -34,7 +34,7 @@ Last updated: 2026-06-24
 
 - Supabase production project and keys are not available in the local environment.
 - Vercel does not yet have `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, or `SUPABASE_SERVICE_ROLE_KEY`.
-- The database migration in `db/migrations/202606140001_initial_schema.sql` has not been applied to a production Supabase project.
+- The database migrations in `db/migrations/` have not been applied to a production Supabase project.
 - Outbound redirects work, but click rows are not persisted until Supabase env vars and schema are configured.
 - Google Search Console and Bing Webmaster sitemap submission require account login.
 - `contact@nsfwaihunt.com`, `partners@nsfwaihunt.com`, and `admin@nsfwaihunt.com` routing rules cannot be created until `wosenkeji@gmail.com` is verified in Cloudflare Email Routing.
@@ -58,7 +58,7 @@ Do not commit these values to the repository.
 ## Next Commercial Steps
 
 1. Create or confirm the Supabase project for `NSFW AI Hunt`.
-2. Apply `db/migrations/202606140001_initial_schema.sql` to Supabase.
+2. Apply `db/migrations/202606140001_initial_schema.sql` and `db/migrations/202606240001_enable_rls.sql` to Supabase.
 3. Add Supabase env vars to Vercel Production, Preview, and Development.
 4. Redeploy production after env vars are added.
 5. Submit `https://nsfwaihunt.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.

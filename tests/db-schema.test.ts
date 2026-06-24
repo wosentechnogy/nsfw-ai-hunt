@@ -8,9 +8,19 @@ const migrationPath = join(
   "migrations",
   "202606140001_initial_schema.sql"
 );
+const rlsMigrationPath = join(
+  process.cwd(),
+  "db",
+  "migrations",
+  "202606240001_enable_rls.sql"
+);
 
 function readMigration() {
   return readFileSync(migrationPath, "utf8").toLowerCase();
+}
+
+function readRlsMigration() {
+  return readFileSync(rlsMigrationPath, "utf8").toLowerCase();
 }
 
 describe("initial database schema migration", () => {
@@ -63,5 +73,26 @@ describe("initial database schema migration", () => {
     expect(sql).toContain("create table if not exists public.affiliate_links");
     expect(sql).toContain("url text not null");
   });
-});
 
+  it("enables RLS for production Supabase tables before launch", () => {
+    const sql = readRlsMigration();
+
+    for (const table of [
+      "tools",
+      "categories",
+      "tool_categories",
+      "comparisons",
+      "alternative_pages",
+      "affiliate_links",
+      "blog_posts",
+      "page_metrics",
+      "outbound_clicks",
+      "admin_audit_logs"
+    ] as const) {
+      expect(sql).toContain(`alter table public.${table} enable row level security`);
+    }
+
+    expect(sql).toContain("server-only supabase service role client");
+    expect(sql).toContain("validated server-side mutations");
+  });
+});

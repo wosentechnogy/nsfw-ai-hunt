@@ -31,8 +31,8 @@ export const commercialReadinessItems = [
     label: "Supabase production database",
     status: "blocked",
     owner: "wosenkeji@gmail.com",
-    evidence: "Production Supabase URL, anon key, and service role key are not configured yet.",
-    nextAction: "Create the Supabase project, apply the initial migration, then add env vars to Vercel."
+    evidence: "Initial schema and RLS migrations are ready, but production Supabase env vars are not configured yet.",
+    nextAction: "Create the Supabase project, apply both migrations, then add env vars to Vercel."
   },
   {
     id: "outbound-click-persistence",

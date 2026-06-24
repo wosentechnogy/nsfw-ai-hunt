@@ -38,6 +38,8 @@ This checklist captures what the founder should prepare before and during implem
 
 - Login method: GitHub account.
 - Create one new project for this site.
+- Apply `db/migrations/202606140001_initial_schema.sql`.
+- Apply `db/migrations/202606240001_enable_rls.sql`.
 - Save these later:
   - `NEXT_PUBLIC_SUPABASE_URL`
   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
