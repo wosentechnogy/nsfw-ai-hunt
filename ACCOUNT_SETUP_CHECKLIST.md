@@ -14,7 +14,7 @@ This checklist captures what the founder should prepare before and during implem
 
 ### Cloudflare
 
-- Account email: `wosenkeji@gmail.com`.
+- Account email: `985064198@qq.com`.
 - Add the domain. Completed for `nsfwaihunt.com`.
 - Enable 2FA.
 - Use Cloudflare DNS. Completed for apex and `www`.
@@ -25,6 +25,7 @@ This checklist captures what the founder should prepare before and during implem
 
 - Account email: `wosenkeji@gmail.com`.
 - Create a private repo for this project. Completed: `wosenkeji-creator/nsfw-ai-hunt`.
+- Local `git push` works for `origin/master`; GitHub CLI should be re-authenticated before GitHub MCP or `gh` operations.
 - Keep repo clean and avoid committing secrets.
 
 ### Vercel

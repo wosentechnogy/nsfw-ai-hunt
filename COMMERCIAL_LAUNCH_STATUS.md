@@ -1,6 +1,6 @@
 # Commercial Launch Status
 
-Last updated: 2026-06-23
+Last updated: 2026-06-24
 
 ## Live Assets
 
@@ -10,6 +10,7 @@ Last updated: 2026-06-23
 - GitHub repository: `https://github.com/wosenkeji-creator/nsfw-ai-hunt`
 - Vercel project: `wosenkeji-creators-projects/nsfw-ai-hunt`
 - Latest verified production deployment: `dpl_DjMZShT97mBjd66WTHc3MaefoDwS`
+- Latest verified Git commit: `5dc6573` (`fix-mobile-tool-detail-overflow`)
 
 ## Completed
 
@@ -17,6 +18,7 @@ Last updated: 2026-06-23
 - Vercel production deploy is live and aliased to `nsfwaihunt.com`.
 - Cloudflare DNS is active for the apex and `www` hostnames.
 - `https://nsfwaihunt.com`, `https://nsfwaihunt.com/sitemap.xml`, and `https://nsfwaihunt.com/go/candy-ai` return expected production responses.
+- `https://nsfwaihunt.com/tools/nomi-ai` renders the affiliate snapshot on mobile, includes the public `30% lifetime recurring` Nomi program note, has no document-level horizontal overflow at a 390px viewport, and contains no `img` or `video` media tags.
 - Vercel Web Analytics and Speed Insights are enabled at the project level.
 - Vercel Analytics and Speed Insights components are installed in the Next.js layout.
 - `NEXT_PUBLIC_SITE_URL` is set for Vercel Production and Development.
@@ -34,6 +36,7 @@ Last updated: 2026-06-23
 - `contact@nsfwaihunt.com`, `partners@nsfwaihunt.com`, and `admin@nsfwaihunt.com` routing rules cannot be created until `wosenkeji@gmail.com` is verified in Cloudflare Email Routing.
 - The dataset is still the preview launch set; Task 24 must resume to reach the 100-tool launch target.
 - Most outbound URLs are official URLs rather than approved affiliate tracking URLs.
+- GitHub CLI authentication for `wosenkeji-creator` is currently invalid, although regular `git push` to `origin/master` works through the existing Git credential path.
 
 ## Required Manual Inputs
 
