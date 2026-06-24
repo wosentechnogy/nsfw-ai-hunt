@@ -20,6 +20,7 @@ Last updated: 2026-06-24
 - `https://nsfwaihunt.com`, `https://nsfwaihunt.com/sitemap.xml`, and `https://nsfwaihunt.com/go/candy-ai` return expected production responses.
 - `https://nsfwaihunt.com/tools/nomi-ai` renders the affiliate snapshot on mobile, includes the public `30% lifetime recurring` Nomi program note, has no document-level horizontal overflow at a 390px viewport, and contains no `img` or `video` media tags.
 - A labeled commercial partnership page exists at `/advertise` for sponsored placements, affiliate partnerships, and vendor data updates.
+- Admin affiliate application tracking exists at `/admin/affiliate-applications` with priority, public payout signals, owner email, and next action fields.
 - Vercel Web Analytics and Speed Insights are enabled at the project level.
 - Vercel Analytics and Speed Insights components are installed in the Next.js layout.
 - `NEXT_PUBLIC_SITE_URL` is set for Vercel Production and Development.

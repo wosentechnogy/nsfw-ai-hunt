@@ -15,4 +15,24 @@ describe("admin affiliate link management source", () => {
     expect(source).toContain("commission");
     expect(source).toContain("Pause link");
   });
+
+  it("tracks affiliate applications without storing private affiliate IDs or payout details", () => {
+    const pageSource = readFileSync(
+      join(process.cwd(), "app", "admin", "affiliate-applications", "page.tsx"),
+      "utf8"
+    );
+    const seedSource = readFileSync(
+      join(process.cwd(), "data", "seed", "affiliate-applications.ts"),
+      "utf8"
+    );
+
+    expect(pageSource).toContain("Affiliate application tracker");
+    expect(pageSource).toContain("Owner email");
+    expect(pageSource).toContain("Next action");
+    expect(seedSource).toContain("wosenkeji@gmail.com");
+    expect(seedSource).toContain("publicPayoutSignal");
+    expect(seedSource).not.toContain("password");
+    expect(seedSource).not.toContain("affiliateId");
+    expect(seedSource).not.toContain("wallet");
+  });
 });

@@ -28,6 +28,9 @@ export default async function AdminPage() {
         <Button asChild>
           <Link href="/admin/tools">Tool workspace</Link>
         </Button>
+        <Button asChild variant="outline">
+          <Link href="/admin/affiliate-applications">Affiliate applications</Link>
+        </Button>
         <form action={signOutAction}>
           <Button type="submit" variant="outline">
             Sign out
