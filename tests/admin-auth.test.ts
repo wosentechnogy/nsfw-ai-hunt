@@ -25,6 +25,7 @@ describe("admin route source", () => {
     const loginSource = readFileSync(join(process.cwd(), "app", "admin", "login", "page.tsx"), "utf8");
     const actionsSource = readFileSync(join(process.cwd(), "app", "admin", "actions.ts"), "utf8");
     const authSource = readFileSync(join(process.cwd(), "lib", "auth", "admin.ts"), "utf8");
+    const middlewareSource = readFileSync(join(process.cwd(), "middleware.ts"), "utf8");
 
     expect(adminSource).toContain("redirect");
     expect(adminSource).toContain("/admin/login");
@@ -43,5 +44,10 @@ describe("admin route source", () => {
     expect(authSource).toContain("ADMIN_ACCESS_TOKEN_COOKIE");
     expect(authSource).toContain("parseAdminAllowlist");
     expect(authSource).toContain("isAllowedAdminUser");
+
+    expect(middlewareSource).toContain('matcher: ["/admin/:path*"]');
+    expect(middlewareSource).toContain('pathname === "/admin/login"');
+    expect(middlewareSource).toContain("ADMIN_ACCESS_TOKEN_COOKIE");
+    expect(middlewareSource).toContain("NextResponse.redirect");
   });
 });
