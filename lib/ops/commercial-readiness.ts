@@ -24,7 +24,7 @@ export const commercialReadinessItems = [
     status: "ready",
     owner: "NSFW AI Hunt",
     evidence: "Admin subroutes are protected by middleware and login remains the only public admin route.",
-    nextAction: "Set ADMIN_ALLOWLIST and ADMIN_ACCESS_TOKEN in each deployment environment."
+    nextAction: "Set ADMIN_ALLOWLIST and Supabase env vars in each deployment environment."
   },
   {
     id: "supabase-production",

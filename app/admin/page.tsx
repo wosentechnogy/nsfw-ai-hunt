@@ -3,18 +3,26 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { signOutAction } from "@/app/admin/actions";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import {
   ADMIN_ACCESS_TOKEN_COOKIE,
-  getAdminAllowlist
+  getAdminAllowlist,
+  isAllowedAdminUser
 } from "@/lib/auth/admin";
 
 export default async function AdminPage() {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get(ADMIN_ACCESS_TOKEN_COOKIE)?.value;
   const allowlist = getAdminAllowlist();
-  const hasConfiguredOwner = allowlist.length > 0 && Boolean(accessToken);
 
-  if (!hasConfiguredOwner) {
+  if (!accessToken || allowlist.length === 0) {
+    redirect("/admin/login");
+  }
+
+  const supabase = createServerSupabaseClient();
+  const { data, error } = await supabase.auth.getUser(accessToken);
+
+  if (error || !isAllowedAdminUser(data.user?.id, allowlist)) {
     redirect("/admin/login");
   }
 

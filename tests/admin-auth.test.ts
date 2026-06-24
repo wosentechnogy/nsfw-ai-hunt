@@ -48,6 +48,9 @@ describe("admin route source", () => {
     expect(middlewareSource).toContain('matcher: ["/admin/:path*"]');
     expect(middlewareSource).toContain('pathname === "/admin/login"');
     expect(middlewareSource).toContain("ADMIN_ACCESS_TOKEN_COOKIE");
+    expect(middlewareSource).toContain("/auth/v1/user");
+    expect(middlewareSource).toContain("Authorization: `Bearer ${accessToken}`");
+    expect(middlewareSource).toContain("allowlist.includes(userId)");
     expect(middlewareSource).toContain("NextResponse.redirect");
   });
 });

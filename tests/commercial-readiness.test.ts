@@ -19,7 +19,7 @@ describe("commercial readiness operations", () => {
     expect(summary.blocked).toBeGreaterThanOrEqual(2);
 
     for (const item of commercialReadinessItems) {
-      expect(item.nextAction).not.toMatch(/password|service role secret|payout|wallet/i);
+      expect(item.nextAction).not.toMatch(/password|service role secret|admin_access_token|payout|wallet/i);
       expect(item.evidence).not.toMatch(/password|private affiliate id|wallet/i);
     }
   });
