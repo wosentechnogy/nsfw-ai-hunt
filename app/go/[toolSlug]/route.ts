@@ -18,12 +18,19 @@ export async function GET(request: NextRequest, context: RouteContext) {
 
   try {
     const supabase = createServiceRoleSupabaseClient();
-    await supabase.from("outbound_clicks").insert({
+    const { error } = await supabase.from("outbound_clicks").insert({
       tool_slug: tool.slug,
       destination_url: destinationUrl,
       referrer: request.headers.get("referer"),
       user_agent: request.headers.get("user-agent")
     });
+
+    if (error) {
+      console.error("Failed to insert outbound click", {
+        toolSlug: tool.slug,
+        message: error.message
+      });
+    }
   } catch {
     // Redirect should still succeed even if logging is unavailable.
   }

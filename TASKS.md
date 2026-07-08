@@ -469,7 +469,7 @@ Acceptance criteria:
 
 ### Task 29: Production Deploy
 
-Status: In progress on 2026-06-24. GitHub push, Vercel production deploy, Cloudflare DNS, custom domain, and Vercel Web Analytics are live. Production mobile QA passed after fixing tool-detail overflow. Supabase production project/env, Cloudflare Email Routing destination verification, and Google/Bing sitemap submission still require account credentials or browser login.
+Status: In progress on 2026-06-25. GitHub push, Vercel production deploy, Cloudflare DNS, custom domain, Vercel Web Analytics, Supabase production project, production env vars, initial schema migration, RLS migration, and `/go/[toolSlug]` production click tracking are live. Production mobile QA passed after fixing tool-detail overflow. Remaining launch items are Cloudflare Email Routing destination verification and Google/Bing sitemap submission.
 
 Goal: Launch.
 

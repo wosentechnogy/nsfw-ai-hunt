@@ -1,6 +1,6 @@
 # PROJECT MEMORY
 
-Last updated: 2026-06-14
+Last updated: 2026-06-25
 
 This file captures the important context from the planning conversation. Future agents should read this before implementation.
 
@@ -404,3 +404,51 @@ Successful patterns:
 - For mobile QA, check both document-level overflow and visible element bounds. Page-level `overflow-x: clip` can hide a real layout problem.
 - Keep adult AI copy conservative: describe tools as tracked software records; avoid explicit media, risky claims, live-pricing claims, and unsupported coupon/affiliate claims.
 - Put JSON-LD only where matching visible content exists: SoftwareApplication on tool detail pages and ItemList on category ranking pages.
+
+## 13. Launch And Affiliate Checkpoint
+
+Checkpoint date: 2026-06-25
+
+Current production state:
+
+- Production domain is live at `https://nsfwaihunt.com`.
+- Vercel project is `wosenkeji-creators-projects/nsfw-ai-hunt`.
+- Supabase production project is `cchmrnjcbowqdpmtcksh`.
+- Supabase project URL is `https://cchmrnjcbowqdpmtcksh.supabase.co`.
+- Production migrations have been applied for the initial schema and RLS.
+- Core production tables verified with RLS enabled: `tools`, `categories`, `tool_categories`, `comparisons`, `alternative_pages`, `affiliate_links`, `blog_posts`, `page_metrics`, `outbound_clicks`, and `admin_audit_logs`.
+
+Production verification completed:
+
+- `/go/[toolSlug]` click tracking was fixed to log Supabase insert errors.
+- Production redeploy succeeded after the redirect fix.
+- `/go/candy-ai` was verified to redirect and insert an `outbound_clicks` row.
+- `pnpm typecheck` passed after the latest affiliate-state corrections.
+
+Affiliate program state:
+
+- Muah AI is approved. Use `https://muah.ai/affiliate/track.php?ref=GE9CZKD0WI` as the approved affiliate URL.
+- CrushOn AI is not fully approved yet. Tapfiliate dashboard screenshots show the Friends of CrushonAI program as `Pending`, `View` disabled, Sources containing only Default, and Deeplink/Postbacks not exposing a tracking link yet.
+- Nomi AI application was submitted with `wosenkeji@gmail.com`; wait for `affiliate@nomi.ai`.
+- SoulGen application was submitted with `wosenkeji@gmail.com`; wait for `hello@soulgen.ai`.
+- Candy AI application/status still needs retry or confirmation because the public affiliate page returned `403` from the current environment.
+
+Files updated for this checkpoint:
+
+- `AFFILIATE_PIPELINE.md` records current public affiliate application status and next actions.
+- `data/seed/affiliate-applications.ts` records non-secret affiliate application state.
+- `data/seed/tools.ts` stores approved affiliate URLs separately from official URLs.
+- `app/go/[toolSlug]/route.ts` contains the production redirect logging fix.
+
+Important next continuation:
+
+1. Deploy the corrected affiliate state and Muah approved URL if not already deployed after the final docs/data edits.
+2. Verify `https://nsfwaihunt.com/go/muah-ai` redirects to the Muah tracking URL and logs `outbound_clicks`.
+3. Check CrushOn Tapfiliate periodically; only add the affiliate URL after `Pending` clears and an official deeplink/tracking link is available.
+4. Continue Task 29 remaining launch work: Cloudflare Email Routing destination verification, Google Search Console sitemap submission, and Bing Webmaster sitemap submission.
+5. Continue Task 30 growth loop: more affiliate applications, GSC/Bing query monitoring, and content/data expansion.
+
+Security reminder:
+
+- Do not store passwords, API keys, recovery codes, payout details, or service role keys in this repository.
+- If an account password was shared in chat, rotate it and move it into a password manager.

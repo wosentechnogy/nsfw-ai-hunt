@@ -1,6 +1,6 @@
 # PROJECT ACCOUNTS
 
-Last updated: 2026-06-23
+Last updated: 2026-06-25
 
 This file stores non-secret account context only. Do not store passwords, API keys, recovery codes, private keys, seed phrases, or payout details in this repository.
 
@@ -25,7 +25,7 @@ This file stores non-secret account context only. Do not store passwords, API ke
 ### GitHub
 
 - Account email: `wosenkeji@gmail.com`
-- Status: new account planned/created by founder
+- Status: production repository connected to Vercel
 - Purpose:
   - Source code repository
   - PR workflow
@@ -34,18 +34,23 @@ This file stores non-secret account context only. Do not store passwords, API ke
 ### Vercel
 
 - Account email: `wosenkeji@gmail.com`
+- Project: `wosenkeji-creators-projects/nsfw-ai-hunt`
 - Purpose:
   - Next.js deployment
   - Preview deployments
   - Production hosting
+- Status: production deploy is live for `https://nsfwaihunt.com`
 
 ### Supabase
 
 - Login method: GitHub account
+- Project ref: `cchmrnjcbowqdpmtcksh`
+- Project URL: `https://cchmrnjcbowqdpmtcksh.supabase.co`
 - Purpose:
   - Postgres database
   - Admin authentication
   - Storage only if needed for safe non-explicit assets
+- Status: production project created; initial schema and RLS migrations applied
 
 ### Google
 
@@ -66,9 +71,8 @@ This file stores non-secret account context only. Do not store passwords, API ke
 
 ## Next Account Tasks
 
-1. Create Supabase project.
-2. Add Supabase env vars to Vercel.
-3. Verify `wosenkeji@gmail.com` for Cloudflare Email Routing.
-4. Create project email routes such as `contact@nsfwaihunt.com`.
-5. Add Google Search Console domain property and submit sitemap.
-6. Add Bing Webmaster property and submit sitemap.
+1. Verify `wosenkeji@gmail.com` for Cloudflare Email Routing.
+2. Create project email routes such as `contact@nsfwaihunt.com`.
+3. Add Google Search Console domain property and submit sitemap.
+4. Add Bing Webmaster property and submit sitemap.
+5. Enable or confirm 2FA on Cloudflare, GitHub, Vercel, Supabase, and Google.

@@ -22,25 +22,25 @@ const rawAffiliateApplications = [
     toolSlug: "nomi-ai",
     toolName: "Nomi AI",
     priority: 1,
-    status: "todo",
+    status: "applied",
     programUrl: "https://nomi.ai/nomi-ai-girlfriend-affiliate-program/",
     network: "Rewardful after approval",
     publicPayoutSignal: "Public page advertises 30% lifetime recurring commissions.",
-    nextAction: "Apply with wosenkeji@gmail.com and record the approved tracking URL.",
+    nextAction: "Wait for approval email from affiliate@nomi.ai, then create Rewardful account and record the approved tracking URL.",
     ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    lastCheckedAt: "2026-06-25"
   },
   {
     toolSlug: "muah-ai",
     toolName: "Muah AI",
     priority: 2,
-    status: "todo",
+    status: "approved",
     programUrl: "https://muah.ai/affiliate/",
     network: "Direct affiliate dashboard",
     publicPayoutSignal: "Public page advertises 40% commission on total paid amount.",
-    nextAction: "Create the direct affiliate account and capture payout threshold notes.",
+    nextAction: "Approved tracking URL captured; verify payout method and payout threshold in the direct dashboard.",
     ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    lastCheckedAt: "2026-06-25"
   },
   {
     toolSlug: "candy-ai",
@@ -61,10 +61,10 @@ const rawAffiliateApplications = [
     status: "applied",
     programUrl: "https://crushonai.tapfiliate.com/",
     network: "Tapfiliate",
-    publicPayoutSignal: "Public Tapfiliate signup is live, but public commission terms are not shown.",
-    nextAction: "Confirm whether the Tapfiliate application is accepted or needs follow-up.",
+    publicPayoutSignal: "Dashboard shows 30% Standard and 50% THE END OF TIME commission structures, but the program is still pending.",
+    nextAction: "Wait for Tapfiliate approval; when View is enabled and the Deeplink generator is populated, capture the final tracking link before replacing the official fallback URL.",
     ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    lastCheckedAt: "2026-06-25"
   },
   {
     toolSlug: "soulgen",
@@ -73,10 +73,10 @@ const rawAffiliateApplications = [
     status: "applied",
     programUrl: "https://www.soulgen.ai/",
     network: "Direct affiliate application",
-    publicPayoutSignal: "Official site exposes an affiliate application route without public percentage.",
-    nextAction: "Confirm application status and collect approved program rules after login.",
+    publicPayoutSignal: "Official Google Form advertises 20% of revenue from approved traffic.",
+    nextAction: "Wait for approval email from hello@soulgen.ai, then collect the affiliate link and program rules.",
     ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    lastCheckedAt: "2026-06-25"
   },
   {
     toolSlug: "kindroid",

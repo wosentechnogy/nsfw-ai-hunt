@@ -546,8 +546,8 @@ const rawDirectoryTools = [
     cookieDuration:
       "CrushOn AI's public signup flow does not disclose a cookie duration on the landing page.",
     affiliateNetwork:
-      "CrushOn AI uses a Tapfiliate signup flow for affiliates.",
-    lastCheckedAt: "2026-06-14"
+      "CrushOn AI uses a Tapfiliate signup flow for affiliates. The dashboard currently shows the Friends of CrushonAI program as pending, with View disabled and no deeplink available yet.",
+    lastCheckedAt: "2026-06-25"
   },
   {
     slug: "nomi-ai",
@@ -675,6 +675,7 @@ const rawDirectoryTools = [
     description:
       "Muah AI is tracked for adult AI buyers comparing companion chat features, voice support, image-capable workflows, payment options, and privacy signals.",
     websiteUrl: "https://muah.ai",
+    affiliateUrl: "https://muah.ai/affiliate/track.php?ref=GE9CZKD0WI",
     status: "published",
     editorScore: 7.9,
     popularityScore: 74,
@@ -692,14 +693,14 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account identity, payment methods, and visible data controls.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "none",
+    affiliateProgramStatus: "approved",
     commissionType: "Muah AI uses a direct revenue-share affiliate program.",
     commissionRate: "Muah AI publicly advertises a 40% commission on total paid amount.",
     cookieDuration:
       "Muah AI's public affiliate landing page does not disclose a cookie duration.",
     affiliateNetwork:
       "Muah AI runs a direct affiliate dashboard with live click, signup, paid-amount, and payout reporting.",
-    lastCheckedAt: "2026-06-14"
+    lastCheckedAt: "2026-06-25"
   },
   {
     slug: "soulgen",

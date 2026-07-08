@@ -2,6 +2,18 @@
 
 This project is an English-language adult AI tools data and affiliate site. Agents must follow the product, architecture, safety, and SEO rules in this file.
 
+## 0. Fixed Conversation Startup
+
+For cross-dialog Codex work, use the fixed conversation map in `.agents/conversation-agent-map.md`.
+
+Every fixed conversation must also read:
+
+1. `.agents/conversation-agent-map.md`
+2. `.agents/CODEX_INTAKE.md`
+3. `.agents/CODEX_HANDOFF.md`
+
+Specialist conversations write completion, blocker, and verification notes to `.agents/CODEX_FEEDBACK.md`.
+
 ## 1. Required Reading Order
 
 Before making code changes, read:

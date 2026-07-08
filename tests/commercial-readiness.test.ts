@@ -15,8 +15,11 @@ describe("commercial readiness operations", () => {
     expect(ids).toContain("email-routing");
     expect(ids).toContain("search-submission");
     expect(ids).toContain("affiliate-url-approval");
+    expect(ids).toContain("production-reachability");
     expect(summary.total).toBe(commercialReadinessItems.length);
-    expect(summary.blocked).toBeGreaterThanOrEqual(2);
+    expect(summary.manual).toBeGreaterThanOrEqual(3);
+    expect(commercialReadinessItems.find((item) => item.id === "supabase-production")?.status).toBe("ready");
+    expect(commercialReadinessItems.find((item) => item.id === "outbound-click-persistence")?.status).toBe("ready");
 
     for (const item of commercialReadinessItems) {
       expect(item.nextAction).not.toMatch(/password|service role secret|admin_access_token|payout|wallet/i);
