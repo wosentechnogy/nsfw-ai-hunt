@@ -83,8 +83,8 @@ validation:
   - Verify no explicit media is introduced by current changes.
 handoff_to: none
 human_confirmation: not_required
-last_update: 2026-07-08T00:00:00+08:00
-notes: Release Gate reran typecheck, lint, and build successfully with CI=true. Static explicit-media scan found no introduced img/video/iframe media surface except the existing Plausible script tag and boundary/disclosure text. Production verification is blocked from this environment: nsfwaihunt.com resolves to 76.76.21.21 but HTTPS resets during TLS handshake and HTTP resets after request send; sitemap, robots, tool, and /go checks also reset; nsfw-ai-hunt.vercel.app cannot connect. Vercel CLI reports production deployment dpl_8Jk558yZftjjP51FCtEs59txkikt as Ready with expected aliases. Retest production from a normal browser or alternate network before marking launch ready.
+last_update: 2026-07-09T02:05:00+08:00
+notes: Coordinator redeployed production under `985064198-2862s-projects/nsfw-ai-hunt` on 2026-07-09. Deployment `dpl_HELeQVUTZsQDtHQsmicB6BgsueP9` is Ready; SSO deployment protection was disabled after it caused 302 redirects to `vercel.com/sso-api`. Verified the 985 Vercel alias returns 200 for `/`, `/sitemap.xml`, `/robots.txt`, and `/tools/candy-ai`, and `/go/muah-ai` returns 307 to the approved Muah AI affiliate URL. Remaining blocker: `nsfwaihunt.com` and `www.nsfwaihunt.com` cannot be added from the 985 Vercel scope because Vercel returns `domain_not_owned` / 403, and the current CLI login cannot access or delete `wosenkeji-creators-projects/nsfw-ai-hunt`. User must authorize/login to the old Vercel account/team or remove the old project/domain binding from the old dashboard before final domain migration and deletion can complete.
 ```
 
 ## Completed Handoffs
