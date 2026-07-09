@@ -31,6 +31,60 @@ Purpose: pass tasks across the 5 fixed conversations without relying on hidden c
 ## Active Handoffs
 
 ```yaml
+id: ADULTAIHUB-20260709-01
+status: ready_engineering
+source_conversation: Adult AI Hub：今日任务和路线
+target_conversation: Adult AI Hub：产品工程
+target_host_id: local
+target_thread_id: 019f3751-a833-7cd0-84e2-11314dee2ff2
+agent: Product Engineering
+owner: unassigned
+task: Verify and migrate the isolated Supabase project for NSFW AI Hunt.
+input:
+  - PROJECT_ACCOUNTS.md
+  - db/migrations/202606140001_initial_schema.sql
+  - db/migrations/202606240001_enable_rls.sql
+  - app/go/[toolSlug]/route.ts
+output_requirement: Apply or report the required schema/data migration path for Supabase project `kkfiefqwzlgwlrcjeixi`, then verify `/go/muah-ai` can log an outbound click without exposing secrets.
+validation:
+  - Account identity gate: confirm Supabase target project is `kkfiefqwzlgwlrcjeixi` under the 985 account context before any write.
+  - Mature solution gate: prefer Supabase CLI/MCP/SQL editor workflow over custom ad hoc scripts.
+  - Verify core tables exist: tools, categories, affiliate_links, outbound_clicks.
+  - Verify no service role key is printed, committed, or stored in repo files.
+handoff_to: Release Gate
+human_confirmation: required_if_destructive
+last_update: 2026-07-09T02:55:00+08:00
+notes: Coordinator observed Supabase REST public checks returning 404 for core tables, suggesting migrations may not be applied to the new isolated project. Vercel Production/Preview have `SUPABASE_SERVICE_ROLE_KEY` configured, and production deploy `dpl_BeXq1xcFBpnGgS17rsUt26Ur8jK3` is Ready.
+```
+
+```yaml
+id: ADULTAIHUB-20260709-02
+status: release_ready
+source_conversation: Adult AI Hub：今日任务和路线
+target_conversation: Adult AI Hub：验收和发布检查
+target_host_id: local
+target_thread_id: 019f3752-30f1-7620-b132-31dbac7f1223
+agent: Release Gate
+owner: unassigned
+task: Verify the current 985 Vercel production deployment and account separation.
+input:
+  - PROJECT_ACCOUNTS.md
+  - AGENTS.md
+  - .agents/conversation-agent-map.md
+  - current Vercel deployment `dpl_BeXq1xcFBpnGgS17rsUt26Ur8jK3`
+output_requirement: Report pass/fail for production reachability, account identity, env presence, and remaining blockers; do not develop or modify business code.
+validation:
+  - Account identity gate: Vercel scope must be `985064198-2862s-projects`, GitHub repo must be `wosentechnogy/nsfw-ai-hunt`, Git author must be `985064198@qq.com`.
+  - Verify `/`, `/sitemap.xml`, `/robots.txt`, `/tools/candy-ai`, and `/go/muah-ai`.
+  - Confirm `SUPABASE_SERVICE_ROLE_KEY` exists in Vercel Production without reading the value.
+  - Confirm custom domain blocker status for `nsfwaihunt.com`.
+handoff_to: none
+human_confirmation: not_required
+last_update: 2026-07-09T02:55:00+08:00
+notes: Coordinator pushed commit `f7ef715`, deployed production `dpl_BeXq1xcFBpnGgS17rsUt26Ur8jK3`, and verified the Vercel default alias routes return expected statuses. Custom domain still returns `domain_not_owned` when adding from 985 Vercel.
+```
+
+```yaml
 id: ADULTAIHUB-20260708-01
 status: release_ready
 source_conversation: Adult AI Hub：今日任务和路线
