@@ -29,7 +29,8 @@ describe("admin affiliate link management source", () => {
     expect(pageSource).toContain("Affiliate application tracker");
     expect(pageSource).toContain("Owner email");
     expect(pageSource).toContain("Next action");
-    expect(seedSource).toContain("wosenkeji@gmail.com");
+    expect(seedSource).toContain("985064198@qq.com");
+    expect(seedSource).not.toContain("wosenkeji@gmail.com");
     expect(seedSource).toContain("publicPayoutSignal");
     expect(seedSource).not.toContain("password");
     expect(seedSource).not.toContain("affiliateId");

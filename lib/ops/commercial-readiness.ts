@@ -14,15 +14,15 @@ export const commercialReadinessItems = [
     id: "production-domain",
     label: "Production domain and hosting",
     status: "ready",
-    owner: "Vercel / Cloudflare",
-    evidence: "nsfwaihunt.com is connected to Vercel production through Cloudflare DNS.",
+    owner: "985064198@qq.com / Vercel / Cloudflare",
+    evidence: "Release Gate verified nsfwaihunt.com and www.nsfwaihunt.com under the 985 Vercel scope; apex redirects to www and core routes return expected responses.",
     nextAction: "Keep GitHub auto-deploy healthy after each production push."
   },
   {
     id: "admin-security",
     label: "Owner admin protection",
     status: "ready",
-    owner: "NSFW AI Hunt",
+    owner: "NSFW AI Hunt / 985064198@qq.com",
     evidence: "Admin subroutes are protected by middleware and login remains the only public admin route.",
     nextAction: "Set ADMIN_ALLOWLIST and Supabase env vars in each deployment environment."
   },
@@ -30,8 +30,8 @@ export const commercialReadinessItems = [
     id: "supabase-production",
     label: "Supabase production database",
     status: "ready",
-    owner: "wosenkeji@gmail.com",
-    evidence: "Project memory and account docs record production project cchmrnjcbowqdpmtcksh with initial schema, RLS migrations, and production env vars applied.",
+    owner: "985064198@qq.com",
+    evidence: "Supabase project kkfiefqwzlgwlrcjeixi has initial_schema, enable_rls, and grant_service_role_public_table_access applied under the 985 context.",
     nextAction: "Keep local .env.local out of git; provide local env vars only when admin or Supabase-backed checks must be rerun."
   },
   {
@@ -39,40 +39,40 @@ export const commercialReadinessItems = [
     label: "Outbound click persistence",
     status: "ready",
     owner: "NSFW AI Hunt",
-    evidence: "PROJECT_MEMORY.md records /go/candy-ai production redirect verification with an outbound_clicks insert after the redirect logging fix.",
-    nextAction: "Re-check /go/muah-ai after production reachability is available from the current network."
+    evidence: "Product Engineering verified https://www.nsfwaihunt.com/go/muah-ai returns 307 and inserts a muah-ai row into outbound_clicks.",
+    nextAction: "Monitor outbound_clicks during normal affiliate QA without exposing server-only Supabase keys."
   },
   {
     id: "production-reachability",
     label: "Production reachability from current environment",
-    status: "blocked",
+    status: "ready",
     owner: "Release Gate",
-    evidence: "Coordinator reported HTTP/HTTPS resets for nsfwaihunt.com and abnormal Vercel fallback reachability from the current environment on 2026-07-08.",
-    nextAction: "Retest /, /sitemap.xml, /robots.txt, and /go/muah-ai from a normal browser or alternate network."
+    evidence: "Release Gate verified www /, /sitemap.xml, /robots.txt, /tools/candy-ai, and /go/muah-ai on 2026-07-09.",
+    nextAction: "Re-run Release Gate checks after material deploys or DNS changes."
   },
   {
     id: "email-routing",
     label: "Commercial email routing",
     status: "manual",
-    owner: "wosenkeji@gmail.com",
-    evidence: "Cloudflare Email Routing destination exists but still requires mailbox verification.",
-    nextAction: "Verify the Cloudflare email, then create contact@, partners@, and admin@ forwarding rules."
+    owner: "985064198@qq.com",
+    evidence: "Cloudflare Email Routing still needs official destination verification and branded forwarding rules in the 985 account context.",
+    nextAction: "Use the official Cloudflare Email Routing dashboard to verify the destination and create contact@, partners@, and admin@ forwarding rules."
   },
   {
     id: "search-submission",
     label: "Search console submission",
     status: "manual",
-    owner: "wosenkeji@gmail.com",
-    evidence: "Sitemap and robots routes exist, but Google Search Console and Bing submission need account login.",
-    nextAction: "Submit https://nsfwaihunt.com/sitemap.xml in Google Search Console and Bing Webmaster Tools."
+    owner: "985064198@qq.com",
+    evidence: "Sitemap and robots routes are live, but Google Search Console and Bing Webmaster submission need official account login.",
+    nextAction: "Use the official GSC and Bing Webmaster flows under 985064198@qq.com to submit https://www.nsfwaihunt.com/sitemap.xml."
   },
   {
     id: "affiliate-url-approval",
     label: "Approved affiliate URLs",
     status: "manual",
-    owner: "wosenkeji@gmail.com",
+    owner: "985064198@qq.com",
     evidence: "Muah AI is approved and stored as a separate affiliateUrl; other priority tools remain official URL fallbacks until approval.",
-    nextAction: "Verify Muah commercial account readiness in the dashboard, then add Candy AI, CrushOn AI, Nomi AI, and SoulGen tracking URLs only after approval."
+    nextAction: "Use official affiliate dashboards/forms under 985064198@qq.com; confirm Muah dashboard readiness and add Candy AI, CrushOn AI, Nomi AI, and SoulGen tracking URLs only after approval."
   }
 ] as const satisfies readonly CommercialReadinessItem[];
 

@@ -20,6 +20,9 @@ describe("commercial readiness operations", () => {
     expect(summary.manual).toBeGreaterThanOrEqual(3);
     expect(commercialReadinessItems.find((item) => item.id === "supabase-production")?.status).toBe("ready");
     expect(commercialReadinessItems.find((item) => item.id === "outbound-click-persistence")?.status).toBe("ready");
+    expect(commercialReadinessItems.find((item) => item.id === "production-reachability")?.status).toBe("ready");
+    const owners: readonly string[] = commercialReadinessItems.map((item) => item.owner);
+    expect(owners).not.toContain("wosenkeji@gmail.com");
 
     for (const item of commercialReadinessItems) {
       expect(item.nextAction).not.toMatch(/password|service role secret|admin_access_token|payout|wallet/i);

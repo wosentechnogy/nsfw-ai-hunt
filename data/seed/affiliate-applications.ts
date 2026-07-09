@@ -11,7 +11,7 @@ const affiliateApplicationSchema = z.object({
   network: z.string().min(2),
   publicPayoutSignal: z.string().min(10),
   nextAction: z.string().min(10),
-  ownerEmail: z.literal("wosenkeji@gmail.com"),
+  ownerEmail: z.literal("985064198@qq.com"),
   lastCheckedAt: z.string().date()
 });
 
@@ -26,9 +26,9 @@ const rawAffiliateApplications = [
     programUrl: "https://nomi.ai/nomi-ai-girlfriend-affiliate-program/",
     network: "Rewardful after approval",
     publicPayoutSignal: "Public page advertises 30% lifetime recurring commissions.",
-    nextAction: "Wait for approval email from affiliate@nomi.ai, then create Rewardful account and record the approved tracking URL.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-25"
+    nextAction: "Use the official program flow under the 985 account context; after approval, record only the approved tracking URL.",
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   },
   {
     toolSlug: "muah-ai",
@@ -38,9 +38,9 @@ const rawAffiliateApplications = [
     programUrl: "https://muah.ai/affiliate/",
     network: "Direct affiliate dashboard",
     publicPayoutSignal: "Public page advertises 40% commission on total paid amount.",
-    nextAction: "Approved tracking URL captured; verify payout method and payout threshold in the direct dashboard.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-25"
+    nextAction: "Approved tracking URL captured; confirm commercial account readiness in the direct dashboard without storing private finance details.",
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   },
   {
     toolSlug: "candy-ai",
@@ -50,9 +50,9 @@ const rawAffiliateApplications = [
     programUrl: "https://candy.ai/affiliate",
     network: "FirstPromoter or Everflow",
     publicPayoutSignal: "Public terms confirm lifetime revshare plus CPS or PPS offer types.",
-    nextAction: "Confirm application status and replace only the affiliate URL after approval.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    nextAction: "Confirm application status through the official flow under the 985 account context and replace only the affiliate URL after approval.",
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   },
   {
     toolSlug: "crushon-ai",
@@ -63,8 +63,8 @@ const rawAffiliateApplications = [
     network: "Tapfiliate",
     publicPayoutSignal: "Dashboard shows 30% Standard and 50% THE END OF TIME commission structures, but the program is still pending.",
     nextAction: "Wait for Tapfiliate approval; when View is enabled and the Deeplink generator is populated, capture the final tracking link before replacing the official fallback URL.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-25"
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   },
   {
     toolSlug: "soulgen",
@@ -74,9 +74,9 @@ const rawAffiliateApplications = [
     programUrl: "https://www.soulgen.ai/",
     network: "Direct affiliate application",
     publicPayoutSignal: "Official Google Form advertises 20% of revenue from approved traffic.",
-    nextAction: "Wait for approval email from hello@soulgen.ai, then collect the affiliate link and program rules.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-25"
+    nextAction: "Use the official program flow under the 985 account context; after approval, collect only the affiliate link and non-secret program rules.",
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   },
   {
     toolSlug: "kindroid",
@@ -87,8 +87,8 @@ const rawAffiliateApplications = [
     network: "Referral credits only",
     publicPayoutSignal: "Public docs describe referral credits rather than a cash affiliate payout.",
     nextAction: "Do not prioritize unless a separate cash affiliate program becomes available.",
-    ownerEmail: "wosenkeji@gmail.com",
-    lastCheckedAt: "2026-06-23"
+    ownerEmail: "985064198@qq.com",
+    lastCheckedAt: "2026-07-09"
   }
 ] as const;
 
