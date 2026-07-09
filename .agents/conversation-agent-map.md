@@ -43,6 +43,14 @@ Every fixed conversation starts by reading:
 
 Then read the smallest additional files required for its role and current task.
 
+## Required Operating Priorities
+
+Every fixed conversation must apply these priorities before task execution:
+
+1. Account identity gate first: verify the active account, team/scope, project, repository, API/MCP target, and local Git identity before touching third-party services or deployment state. For `nsfw-ai-hunt` / `nsfwaihunt.com`, the intended account context is `985064198@qq.com` unless explicitly overridden by the user.
+2. Mature solution search first: check official docs, platform features, mature open-source packages, and existing repository patterns before building a custom solution.
+3. Cross-conversation routing first: mixed or multi-domain work must be split by Coordinator and routed to the fixed specialist conversation via `.agents/CODEX_HANDOFF.md` and Codex cross-thread tools.
+
 ## Handoff Status Values
 
 - `intake`: raw request captured; not routed yet.

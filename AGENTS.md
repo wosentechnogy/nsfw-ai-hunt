@@ -14,6 +14,22 @@ Every fixed conversation must also read:
 
 Specialist conversations write completion, blocker, and verification notes to `.agents/CODEX_FEEDBACK.md`.
 
+## 0.5 Required Operating Priorities
+
+These priorities apply before any implementation, deployment, account, API, MCP, database, or automation task.
+
+1. Account identity gate first.
+   - Before touching GitHub, Vercel, Supabase, Cloudflare, Google, Bing, affiliate dashboards, MCP config, API keys, or deployment state, verify the active account, team/scope, project, repository, and local Git identity.
+   - For `nsfw-ai-hunt` / `nsfwaihunt.com`, the intended account context is `985064198@qq.com` unless the user explicitly overrides it.
+   - Do not proceed when account ownership, team membership, project binding, or key provenance is unclear.
+2. Mature solution search first.
+   - Before building custom code, automation, data pipelines, deployment scripts, or integrations, check whether an official SDK, platform feature, open-source package, existing project pattern, or mature service can solve the task.
+   - Prefer official documentation, proven libraries, and existing repository conventions over hand-rolled systems.
+3. Cross-conversation routing first.
+   - Mixed or multi-domain work must be split by the Coordinator and routed through the fixed conversation map.
+   - Use `.agents/CODEX_INTAKE.md`, `.agents/CODEX_HANDOFF.md`, and the Codex cross-thread tools so Data SEO, Product Engineering, Compliance Monetization, and Release Gate agents execute their own scoped work.
+   - Do not silently keep specialist work inside the Coordinator conversation when a fixed specialist conversation should own it.
+
 ## 1. Required Reading Order
 
 Before making code changes, read:
