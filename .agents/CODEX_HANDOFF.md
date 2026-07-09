@@ -32,13 +32,13 @@ Purpose: pass tasks across the 5 fixed conversations without relying on hidden c
 
 ```yaml
 id: ADULTAIHUB-20260709-01
-status: ready_engineering
+status: in_progress
 source_conversation: Adult AI Hub：今日任务和路线
 target_conversation: Adult AI Hub：产品工程
 target_host_id: local
 target_thread_id: 019f3751-a833-7cd0-84e2-11314dee2ff2
 agent: Product Engineering
-owner: unassigned
+owner: Adult AI Hub：产品工程
 task: Verify and migrate the isolated Supabase project for NSFW AI Hunt.
 input:
   - PROJECT_ACCOUNTS.md
@@ -53,7 +53,7 @@ validation:
   - Verify no service role key is printed, committed, or stored in repo files.
 handoff_to: Release Gate
 human_confirmation: required_if_destructive
-last_update: 2026-07-09T02:55:00+08:00
+last_update: 2026-07-09T03:10:00+08:00
 notes: Coordinator observed Supabase REST public checks returning 404 for core tables, suggesting migrations may not be applied to the new isolated project. Vercel Production/Preview have `SUPABASE_SERVICE_ROLE_KEY` configured, and production deploy `dpl_BeXq1xcFBpnGgS17rsUt26Ur8jK3` is Ready.
 ```
 
