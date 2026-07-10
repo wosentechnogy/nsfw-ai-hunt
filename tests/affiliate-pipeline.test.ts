@@ -8,14 +8,27 @@ describe("affiliate pipeline seed coverage", () => {
     const nomi = getToolBySlug("nomi-ai");
     const kindroid = getToolBySlug("kindroid");
     const muah = getToolBySlug("muah-ai");
+    const girlfriendgpt = getToolBySlug("girlfriendgpt");
+    const dreamgf = getToolBySlug("dreamgf");
+    const ourdream = getToolBySlug("ourdream-ai");
+    const spicier = getToolBySlug("spicier-ai");
     const soulgen = getToolBySlug("soulgen");
 
-    expect(candy?.affiliateProgramStatus).toBe("applied");
-    expect(candy?.affiliateNetwork).toContain("FirstPromoter");
+    expect(candy?.websiteUrl).toBe("https://candy.ai");
+    expect(candy?.affiliateUrl).toContain("https://t.vlmai-1.com/");
+    expect(candy?.affiliateProgramStatus).toBe("approved");
+    expect(candy?.commissionRate).toContain("40.00%");
+    expect(candy?.affiliateNetwork).toContain("CrakRevenue");
 
-    expect(crushon?.affiliateProgramStatus).toBe("applied");
+    expect(crushon?.websiteUrl).toBe("https://crushon.ai");
+    expect(crushon?.affiliateUrl).toBe("https://crushon.ai/?ref=zdbjmta&mist=1");
+    expect(crushon?.affiliateProgramStatus).toBe("approved");
+    expect(crushon?.commissionRate).toContain("30%");
     expect(crushon?.affiliateNetwork).toContain("Tapfiliate");
 
+    expect(nomi?.websiteUrl).toBe("https://nomi.ai");
+    expect(nomi?.affiliateUrl).toBe("https://nomi.ai/?via=ate");
+    expect(nomi?.affiliateProgramStatus).toBe("approved");
     expect(nomi?.commissionRate).toContain("30%");
     expect(nomi?.affiliateNetwork).toContain("Rewardful");
 
@@ -24,6 +37,30 @@ describe("affiliate pipeline seed coverage", () => {
 
     expect(muah?.commissionRate).toContain("40%");
     expect(muah?.affiliateNetwork).toContain("direct affiliate dashboard");
+
+    expect(girlfriendgpt?.websiteUrl).toBe("https://girlfriendgpt.ai");
+    expect(girlfriendgpt?.affiliateUrl).toContain("https://t.vlmai-1.com/");
+    expect(girlfriendgpt?.affiliateProgramStatus).toBe("approved");
+    expect(girlfriendgpt?.commissionRate).toContain("$45.00");
+    expect(girlfriendgpt?.affiliateNetwork).toContain("CrakRevenue");
+
+    expect(dreamgf?.websiteUrl).toBe("https://dreamgf.ai");
+    expect(dreamgf?.affiliateUrl).toContain("https://t.vlmai-1.com/");
+    expect(dreamgf?.affiliateProgramStatus).toBe("approved");
+    expect(dreamgf?.commissionRate).toContain("35.00%");
+    expect(dreamgf?.affiliateNetwork).toContain("CrakRevenue");
+
+    expect(ourdream?.websiteUrl).toBe("https://ourdream.ai");
+    expect(ourdream?.affiliateUrl).toContain("https://t.vlmai-1.com/");
+    expect(ourdream?.affiliateProgramStatus).toBe("approved");
+    expect(ourdream?.commissionRate).toContain("30.00%");
+    expect(ourdream?.affiliateNetwork).toContain("CrakRevenue");
+
+    expect(spicier?.websiteUrl).toBe("https://spicier.ai");
+    expect(spicier?.affiliateUrl).toContain("https://t.vlmai-1.com/");
+    expect(spicier?.affiliateProgramStatus).toBe("approved");
+    expect(spicier?.commissionRate).toContain("Multi-CPA");
+    expect(spicier?.affiliateNetwork).toContain("CrakRevenue");
 
     expect(soulgen?.affiliateProgramStatus).toBe("applied");
     expect(soulgen?.affiliateNetwork).toContain("direct affiliate application");
