@@ -505,16 +505,14 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account requirements, payment options, and visible data policy language.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "applied",
-    commissionType:
-      "Candy AI supports both revshare and one-time CPS or PPS structures, depending on the offer.",
-    commissionRate:
-      "Candy AI's public terms confirm lifetime revshare and one-time CPS or PPS offers, but they do not disclose a public percentage.",
+    affiliateUrl: "https://t.vlmai-1.com/418427/7793?aff_sub5=SF_006OG000004lmDN",
+    affiliateProgramStatus: "approved",
+    commissionType: "revshare",
+    commissionRate: "40.00% Revshare Lifetime",
     cookieDuration:
-      "Candy AI's public affiliate terms do not disclose a cookie window on the public page.",
-    affiliateNetwork:
-      "Direct Candy AI applications are live, with public affiliate terms for FirstPromoter and Everflow.",
-    lastCheckedAt: "2026-06-14"
+      "CrakRevenue Candy.ai Revshare Lifetime offer ID 9022 is approved; public cookie-window details were not stored.",
+    affiliateNetwork: "CrakRevenue",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "crushon-ai",
@@ -523,6 +521,7 @@ const rawDirectoryTools = [
     description:
       "CrushOn AI is tracked for users comparing character roleplay depth, free-plan availability, model limits, creator features, and policy clarity across adult AI chat tools.",
     websiteUrl: "https://crushon.ai",
+    affiliateUrl: "https://crushon.ai/?ref=zdbjmta&mist=1",
     status: "published",
     editorScore: 8.8,
     popularityScore: 90,
@@ -540,14 +539,14 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account controls, public profile settings, and payment visibility.",
     pricingModel: "freemium",
-    affiliateProgramStatus: "applied",
+    affiliateProgramStatus: "approved",
     commissionRate:
-      "CrushOn AI has a live Tapfiliate signup page, but the public signup flow does not disclose the commission percentage.",
+      "Friends of CrushonAI offers a 30% recurring commission from the first 90 days after the first conversion.",
     cookieDuration:
       "CrushOn AI's public signup flow does not disclose a cookie duration on the landing page.",
     affiliateNetwork:
-      "CrushOn AI uses a Tapfiliate signup flow for affiliates. The dashboard currently shows the Friends of CrushonAI program as pending, with View disabled and no deeplink available yet.",
-    lastCheckedAt: "2026-06-25"
+      "Friends of CrushonAI is approved through Tapfiliate; the approved referral URL is stored separately from the official URL.",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "nomi-ai",
@@ -573,7 +572,8 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account identity, app access, and retention policy visibility.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "none",
+    affiliateUrl: "https://nomi.ai/?via=ate",
+    affiliateProgramStatus: "approved",
     commissionType:
       "Nomi runs a recurring revenue-share affiliate program for paid subscriptions.",
     commissionRate:
@@ -581,8 +581,8 @@ const rawDirectoryTools = [
     cookieDuration:
       "Nomi's public affiliate terms describe last-link attribution but do not publish a separate cookie duration field.",
     affiliateNetwork:
-      "Nomi applications are submitted by Google Form, with accepted affiliates managed through Rewardful.",
-    lastCheckedAt: "2026-06-14"
+      "Nomi accepted affiliates are managed through Rewardful; the approved tracking URL is stored separately from the official URL.",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "janitor-ai",
@@ -665,8 +665,12 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account setup, payment visibility, and retention notes.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "applied",
-    lastCheckedAt: "2026-06-14"
+    affiliateUrl: "https://t.vlmai-1.com/418427/6523?aff_sub5=SF_006OG000004lmDN",
+    affiliateProgramStatus: "approved",
+    commissionType: "revshare",
+    commissionRate: "35.00% Revshare Lifetime",
+    affiliateNetwork: "CrakRevenue",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "muah-ai",
@@ -782,8 +786,12 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account requirements, billing visibility, and policy wording around generated content.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "none",
-    lastCheckedAt: "2026-06-22"
+    affiliateUrl: "https://t.vlmai-1.com/418427/7710?aff_sub5=SF_006OG000004lmDN",
+    affiliateProgramStatus: "approved",
+    commissionType: "revshare",
+    commissionRate: "30.00% Revshare Lifetime",
+    affiliateNetwork: "CrakRevenue",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "spicier-ai",
@@ -808,8 +816,12 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account setup, checkout visibility, and stated data controls.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "none",
-    lastCheckedAt: "2026-06-22"
+    affiliateUrl: "https://t.vlmai-1.com/418427/7942?aff_sub5=SF_006OG000004lmDN",
+    affiliateProgramStatus: "approved",
+    commissionType: "multi-cpa",
+    commissionRate: "Multi-CPA",
+    affiliateNetwork: "CrakRevenue",
+    lastCheckedAt: "2026-07-11"
   },
   {
     slug: "udesire-ai",
@@ -894,6 +906,7 @@ const rawDirectoryTools = [
     description:
       "GirlfriendGPT is tracked for buyers comparing adult AI companion tools by plan model, image support, free access posture, and overall fit for chat-first use cases.",
     websiteUrl: "https://girlfriendgpt.ai",
+    affiliateUrl: "https://t.vlmai-1.com/418427/7477?aff_sub5=SF_006OG000004lmDN",
     logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://girlfriendgpt.ai",
     status: "published",
     editorScore: 7.4,
@@ -910,8 +923,11 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on account setup, payment visibility, and available policy details before signup.",
     pricingModel: "freemium",
-    affiliateProgramStatus: "none",
-    lastCheckedAt: "2026-06-22"
+    affiliateProgramStatus: "approved",
+    commissionType: "pps",
+    commissionRate: "$45.00 PPS",
+    affiliateNetwork: "CrakRevenue",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "kupid-ai",
