@@ -679,7 +679,7 @@ const rawDirectoryTools = [
     description:
       "Muah AI is tracked for adult AI buyers comparing companion chat features, voice support, image-capable workflows, payment options, and privacy signals.",
     websiteUrl: "https://muah.ai",
-    affiliateUrl: "https://muah.ai/affiliate/track.php?ref=GE9CZKD0WI",
+    affiliateUrl: "https://muah.ai/affiliate/track.php?ref=VSYIYHIV0N",
     status: "published",
     editorScore: 7.9,
     popularityScore: 74,
