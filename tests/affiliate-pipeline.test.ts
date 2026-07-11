@@ -35,6 +35,10 @@ describe("affiliate pipeline seed coverage", () => {
     expect(kindroid?.affiliateProgramStatus).toBe("none");
     expect(kindroid?.commissionType).toContain("referral");
 
+    expect(muah?.websiteUrl).toBe("https://muah.ai");
+    expect(muah?.affiliateUrl).toBe(
+      "https://muah.ai/affiliate/track.php?ref=VSYIYHIV0N"
+    );
     expect(muah?.commissionRate).toContain("40%");
     expect(muah?.affiliateNetwork).toContain("direct affiliate dashboard");
 
