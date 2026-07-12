@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildWebPageJsonLd } from "@/lib/seo/schema";
 import {
   featuredTools,
   homepageCategories,
@@ -17,8 +19,17 @@ import {
 } from "@/data/seed/homepage";
 
 export default function Home() {
+  const homeJsonLd = buildWebPageJsonLd({
+    title: "NSFW AI Hunt",
+    description:
+      "Compare adult AI software by features, price, privacy, policies, and limits.",
+    path: "/",
+    type: "CollectionPage"
+  });
+
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       <section className="border-b">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:py-14">
           <div className="min-w-0 max-w-3xl">

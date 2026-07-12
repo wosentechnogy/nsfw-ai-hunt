@@ -51,6 +51,14 @@ describe("SEO infrastructure source", () => {
     }
   });
 
+  it("adds matching structured data to the homepage", () => {
+    const source = readFileSync(join(process.cwd(), "app", "page.tsx"), "utf8");
+
+    expect(source).toContain("buildWebPageJsonLd");
+    expect(source).toContain("CollectionPage");
+    expect(source).toContain("JsonLd");
+  });
+
   it("defines baseline response security headers", () => {
     const source = readFileSync(join(process.cwd(), "next.config.ts"), "utf8");
 
