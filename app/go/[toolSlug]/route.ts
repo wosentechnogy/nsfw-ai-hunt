@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToolBySlug } from "@/data/seed/tools";
+import { normalizeSourcePath } from "@/lib/analytics/source-path";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service";
 
 type RouteContext = {
@@ -15,12 +16,18 @@ export async function GET(request: NextRequest, context: RouteContext) {
   }
 
   const destinationUrl = tool.affiliateUrl ?? tool.websiteUrl;
+  const sourcePath = normalizeSourcePath({
+    explicitSource: request.nextUrl.searchParams.get("source_path"),
+    referrer: request.headers.get("referer"),
+    requestOrigin: request.nextUrl.origin
+  });
 
   try {
     const supabase = createServiceRoleSupabaseClient();
     const { error } = await supabase.from("outbound_clicks").insert({
       tool_slug: tool.slug,
       destination_url: destinationUrl,
+      source_path: sourcePath,
       referrer: request.headers.get("referer"),
       user_agent: request.headers.get("user-agent")
     });

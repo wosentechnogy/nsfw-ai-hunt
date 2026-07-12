@@ -56,7 +56,7 @@ export default function AdminAffiliateApplicationsPage() {
       </section>
 
       <div className="mt-8 overflow-x-auto rounded-md border">
-        <table className="w-full min-w-[1040px] border-collapse text-sm">
+        <table className="w-full min-w-[1160px] border-collapse text-sm">
           <thead className="bg-secondary text-left text-xs uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">Priority</th>
@@ -66,6 +66,7 @@ export default function AdminAffiliateApplicationsPage() {
               <th className="px-4 py-3 font-medium">Public payout signal</th>
               <th className="px-4 py-3 font-medium">Next action</th>
               <th className="px-4 py-3 font-medium">Owner email</th>
+              <th className="px-4 py-3 font-medium">Account context</th>
             </tr>
           </thead>
           <tbody className="divide-y">
@@ -85,6 +86,9 @@ export default function AdminAffiliateApplicationsPage() {
                 <td className="px-4 py-4 text-muted-foreground">{application.publicPayoutSignal}</td>
                 <td className="px-4 py-4 text-muted-foreground">{application.nextAction}</td>
                 <td className="px-4 py-4 text-muted-foreground">{application.ownerEmail}</td>
+                <td className="px-4 py-4 text-muted-foreground">
+                  {application.accountContextNote ?? "Default NSFW AI Hunt account context"}
+                </td>
               </tr>
             ))}
           </tbody>

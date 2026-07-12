@@ -25,6 +25,9 @@ describe("SEO infrastructure source", () => {
     expect(canonicalSource).toContain("getCanonicalUrl");
     expect(schemaSource).toContain("buildBreadcrumbJsonLd");
     expect(jsonLdSource).toContain("application/ld+json");
+    expect(jsonLdSource).toContain('replace(/</g, "\\\\u003c")');
+    expect(jsonLdSource).toContain('replace(/>/g, "\\\\u003e")');
+    expect(jsonLdSource).toContain('replace(/&/g, "\\\\u0026")');
   });
 
   it("uses the shared metadata helper in public route files", () => {
@@ -46,5 +49,14 @@ describe("SEO infrastructure source", () => {
       expect(source).toContain("buildMetadata");
       expect(source).toContain("JsonLd");
     }
+  });
+
+  it("defines baseline response security headers", () => {
+    const source = readFileSync(join(process.cwd(), "next.config.ts"), "utf8");
+
+    expect(source).toContain("X-Content-Type-Options");
+    expect(source).toContain("X-Frame-Options");
+    expect(source).toContain("Referrer-Policy");
+    expect(source).toContain("Permissions-Policy");
   });
 });

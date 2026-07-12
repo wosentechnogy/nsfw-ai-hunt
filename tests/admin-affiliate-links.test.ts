@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { affiliateApplications } from "@/data/seed/affiliate-applications";
 
 describe("admin affiliate link management source", () => {
   it("defines affiliate link management route with primary-link, network, and commission fields", () => {
@@ -28,12 +29,31 @@ describe("admin affiliate link management source", () => {
 
     expect(pageSource).toContain("Affiliate application tracker");
     expect(pageSource).toContain("Owner email");
+    expect(pageSource).toContain("Account context");
     expect(pageSource).toContain("Next action");
     expect(seedSource).toContain("985064198@qq.com");
-    expect(seedSource).not.toContain("wosenkeji@gmail.com");
+    expect(seedSource).toContain("wosenkeji@gmail.com");
+    expect(seedSource).toContain("Nomi-only authorized exception");
     expect(seedSource).toContain("publicPayoutSignal");
     expect(seedSource).not.toContain("password");
     expect(seedSource).not.toContain("affiliateId");
     expect(seedSource).not.toContain("wallet");
+
+    const nomiApplication = affiliateApplications.find(
+      (application) => application.toolSlug === "nomi-ai"
+    );
+    const nonNomiApplications = affiliateApplications.filter(
+      (application) => application.toolSlug !== "nomi-ai"
+    );
+
+    expect(nomiApplication?.status).toBe("approved");
+    expect(nomiApplication?.ownerEmail).toBe("wosenkeji@gmail.com");
+    expect(nomiApplication?.accountContextNote).toContain("Nomi-only");
+    expect(affiliateApplications.find((application) => application.toolSlug === "crushon-ai")?.status).toBe(
+      "approved"
+    );
+    expect(nonNomiApplications.every((application) => application.ownerEmail === "985064198@qq.com")).toBe(
+      true
+    );
   });
 });

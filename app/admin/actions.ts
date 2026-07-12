@@ -2,6 +2,7 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import {
   ADMIN_ACCESS_TOKEN_COOKIE,
@@ -10,9 +11,22 @@ import {
   isAllowedAdminUser
 } from "@/lib/auth/admin";
 
+const adminSignInSchema = z.object({
+  email: z.string().trim().email().max(320),
+  password: z.string().min(8).max(256)
+});
+
 export async function signInAction(formData: FormData) {
-  const email = String(formData.get("email") ?? "");
-  const password = String(formData.get("password") ?? "");
+  const input = adminSignInSchema.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password")
+  });
+
+  if (!input.success) {
+    redirect("/admin/login");
+  }
+
+  const { email, password } = input.data;
   const supabase = createServerSupabaseClient();
 
   const result = await supabase.auth.signInWithPassword({
@@ -32,16 +46,17 @@ export async function signInAction(formData: FormData) {
   }
 
   const cookieStore = await cookies();
+  const secureCookie = process.env.NODE_ENV === "production";
   cookieStore.set(ADMIN_ACCESS_TOKEN_COOKIE, result.data.session.access_token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: true,
+    secure: secureCookie,
     path: "/"
   });
   cookieStore.set(ADMIN_REFRESH_TOKEN_COOKIE, result.data.session.refresh_token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: true,
+    secure: secureCookie,
     path: "/"
   });
 

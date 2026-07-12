@@ -71,6 +71,14 @@ describe("comparison page data helpers", () => {
     expect(slugs).toContain("candy-ai-vs-nomi-ai");
     expect(slugs).not.toContain("janitor-ai-vs-soulgen");
   });
+
+  it("keeps low-differentiation comparison pairs out of the indexable set", () => {
+    const allSlugs = getComparisonPageSlugs();
+    const indexableSlugs = getIndexableComparisonPageSlugs();
+
+    expect(indexableSlugs.length).toBeLessThan(allSlugs.length);
+    expect(indexableSlugs.length / allSlugs.length).toBeLessThan(0.9);
+  });
 });
 
 describe("comparison page source", () => {

@@ -12,6 +12,12 @@ import {
 import { siteConfig } from "@/lib/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date(
+    directoryTools.reduce(
+      (latest, tool) => (tool.lastCheckedAt > latest ? tool.lastCheckedAt : latest),
+      "2026-06-22"
+    )
+  );
   const staticRoutes = [
     "/",
     "/tools",
@@ -39,6 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...dynamicRoutes].map((path) => ({
     url: `${siteConfig.url}${path}`,
-    lastModified: new Date("2026-06-22")
+    lastModified
   }));
 }

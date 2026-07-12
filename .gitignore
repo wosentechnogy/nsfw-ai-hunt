@@ -46,4 +46,7 @@ tsconfig.tsbuildinfo
 .corepack /
 .localappdata/
 
+# Supabase CLI local link metadata
+/supabase/.temp/
+
 .vercel

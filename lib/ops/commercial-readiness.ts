@@ -31,16 +31,16 @@ export const commercialReadinessItems = [
     label: "Supabase production database",
     status: "ready",
     owner: "985064198@qq.com",
-    evidence: "Supabase project kkfiefqwzlgwlrcjeixi has initial_schema, enable_rls, and grant_service_role_public_table_access applied under the 985 context.",
-    nextAction: "Keep local .env.local out of git; provide local env vars only when admin or Supabase-backed checks must be rerun."
+    evidence: "Supabase project kkfiefqwzlgwlrcjeixi was verified under the 985 context; source_path is a nullable text column with outbound_clicks_source_path_idx present in production.",
+    nextAction: "Keep migration history and production schema aligned for future database changes."
   },
   {
     id: "outbound-click-persistence",
     label: "Outbound click persistence",
     status: "ready",
     owner: "NSFW AI Hunt",
-    evidence: "Product Engineering verified https://www.nsfwaihunt.com/go/muah-ai returns 307 and inserts a muah-ai row into outbound_clicks.",
-    nextAction: "Monitor outbound_clicks during normal affiliate QA without exposing server-only Supabase keys."
+    evidence: "Production /go/candy-ai accepted an internal source_path and the latest public.outbound_clicks row persisted /compare/candy-ai-vs-nomi-ai after the 985 deployment.",
+    nextAction: "Monitor source attribution coverage in the 7-day and 28-day revenue reviews."
   },
   {
     id: "production-reachability",
@@ -53,26 +53,34 @@ export const commercialReadinessItems = [
   {
     id: "email-routing",
     label: "Commercial email routing",
-    status: "manual",
+    status: "ready",
     owner: "985064198@qq.com",
-    evidence: "Cloudflare Email Routing still needs official destination verification and branded forwarding rules in the 985 account context.",
-    nextAction: "Use the official Cloudflare Email Routing dashboard to verify the destination and create contact@, partners@, and admin@ forwarding rules."
+    evidence: "User confirmed Cloudflare Email Routing destination verification and branded forwarding rules are completed through the official 985 account context.",
+    nextAction: "Keep branded routing rules in Cloudflare and route future mailbox changes through the official dashboard."
   },
   {
     id: "search-submission",
     label: "Search console submission",
-    status: "manual",
+    status: "ready",
     owner: "985064198@qq.com",
-    evidence: "Sitemap and robots routes are live, but Google Search Console and Bing Webmaster submission need official account login.",
-    nextAction: "Use the official GSC and Bing Webmaster flows under 985064198@qq.com to submit https://www.nsfwaihunt.com/sitemap.xml."
+    evidence: "User confirmed Google Search Console and Bing Webmaster sitemap submission are completed through official account flows.",
+    nextAction: "Monitor official GSC and Bing Webmaster reports before adding custom traffic automation."
   },
   {
     id: "affiliate-url-approval",
-    label: "Approved affiliate URLs",
+    label: "Affiliate dashboard readiness and approvals",
     status: "manual",
     owner: "985064198@qq.com",
-    evidence: "Muah AI is approved and stored as a separate affiliateUrl; other priority tools remain official URL fallbacks until approval.",
-    nextAction: "Use official affiliate dashboards/forms under 985064198@qq.com; confirm Muah dashboard readiness and add Candy AI, CrushOn AI, Nomi AI, and SoulGen tracking URLs only after approval."
+    evidence: "Muah AI, Nomi AI, CrushOn AI, GirlfriendGPT, Candy AI, DreamGF, OurDream AI, and Spicier AI are approved and stored as separate affiliateUrl values; Nomi uses a documented user-authorized account exception, while SoulGen remains an official URL fallback.",
+    nextAction: "Confirm Muah and CrakRevenue profile readiness, keep approved tools routed through /go, and add SoulGen tracking only after official approval."
+  },
+  {
+    id: "api-mcp-keys",
+    label: "Research API and MCP keys",
+    status: "manual",
+    owner: "985064198@qq.com",
+    evidence: "Firecrawl and Perplexity integrations remain unavailable until their API keys are created and provided through an approved secret store or local environment.",
+    nextAction: "Use official Firecrawl and Perplexity account flows under the NSFW AI Hunt account context, then configure keys outside the repository."
   }
 ] as const satisfies readonly CommercialReadinessItem[];
 

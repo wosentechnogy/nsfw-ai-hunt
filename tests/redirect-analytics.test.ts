@@ -13,6 +13,8 @@ describe("redirect and analytics source", () => {
 
     expect(goSource).toContain("redirect");
     expect(goSource).toContain("outbound_clicks");
+    expect(goSource).toContain("source_path");
+    expect(goSource).toContain("normalizeSourcePath");
     expect(goSource).toContain("affiliateUrl");
     expect(goSource).toContain("websiteUrl");
 

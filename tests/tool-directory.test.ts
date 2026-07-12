@@ -7,6 +7,7 @@ import {
   directoryPricingFilters,
   directorySortOptions,
   directoryTools,
+  getStaleToolRecords,
   getToolDirectoryResults
 } from "@/data/seed/tools";
 
@@ -38,6 +39,14 @@ describe("tool directory data and filters", () => {
     );
     expect(privateChatResults.tools.every((tool) => tool.acceptsCrypto)).toBe(true);
     expect(privateChatResults.tools.every((tool) => tool.pricingModel === "subscription")).toBe(true);
+  });
+
+  it("returns published records older than the freshness window for review", () => {
+    const staleTools = getStaleToolRecords(new Date("2026-07-12T00:00:00Z"), 20);
+
+    expect(staleTools.some((tool) => tool.slug === "janitor-ai")).toBe(true);
+    expect(staleTools.some((tool) => tool.slug === "candy-ai")).toBe(false);
+    expect(staleTools.every((tool) => tool.status === "published")).toBe(true);
   });
 
   it("provides visible filter and sort option labels for the page", () => {

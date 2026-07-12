@@ -1,4 +1,5 @@
 import { toolSchema, type PricingModel, type ToolInput, type ToolRecord } from "@/lib/validation";
+import { task24ExpansionTools } from "@/data/seed/task24-tool-expansion";
 
 export type DirectoryCategory = Readonly<{
   slug: string;
@@ -703,8 +704,8 @@ const rawDirectoryTools = [
     cookieDuration:
       "Muah AI's public affiliate landing page does not disclose a cookie duration.",
     affiliateNetwork:
-      "Muah AI runs a direct affiliate dashboard with live click, signup, paid-amount, and payout reporting.",
-    lastCheckedAt: "2026-06-25"
+      "Muah AI direct affiliate dashboard for the 985064198@qq.com account; current tracking ID VSYIYHIV0N.",
+    lastCheckedAt: "2026-07-11"
   },
   {
     slug: "soulgen",
@@ -951,8 +952,13 @@ const rawDirectoryTools = [
     privacySummary:
       "Privacy review focuses on signup friction, billing visibility, and stated account controls.",
     pricingModel: "subscription",
-    affiliateProgramStatus: "none",
-    lastCheckedAt: "2026-06-22"
+    affiliateProgramStatus: "applied",
+    commissionType: "Kupid AI runs a direct affiliate program for recurring subscriptions.",
+    commissionRate: "Kupid AI publicly advertises 45% lifetime recurring commissions.",
+    cookieDuration: "Kupid AI publicly describes unlimited cookie duration with first-touch attribution.",
+    affiliateNetwork:
+      "Kupid AI has a direct affiliate application flow; NSFW AI Hunt submitted an application on 2026-07-10 and is waiting for review.",
+    lastCheckedAt: "2026-07-10"
   },
   {
     slug: "herahaven-ai",
@@ -1430,7 +1436,503 @@ const rawDirectoryTools = [
     pricingModel: "freemium",
     affiliateProgramStatus: "none",
     lastCheckedAt: "2026-06-24"
-  }
+  },
+  {
+    slug: "dreamgen",
+    name: "DreamGen",
+    tagline: "Roleplay and story generator tracked for free-tier access, subscriptions, and world controls.",
+    description:
+      "DreamGen is tracked as a roleplay and story-generation product for buyers comparing character scenarios, story controls, free evaluation paths, subscription pricing, and privacy notes.",
+    websiteUrl: "https://dreamgen.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://dreamgen.com",
+    status: "published",
+    editorScore: 7.1,
+    popularityScore: 62,
+    categorySlugs: ["character-roleplay-ai"],
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a text roleplay and story tool; buyers should review official policy pages before assuming adult-use support.",
+    privacySummary:
+      "Privacy review focuses on account setup, saved worlds, subscription handling, and official privacy policy visibility.",
+    pricingModel: "subscription",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "backyard-ai",
+    name: "Backyard AI",
+    tagline: "Character chat platform tracked for text, voice, mobile apps, and private-chat signals.",
+    description:
+      "Backyard AI is tracked for users comparing AI character chat products by free access, text and voice interaction, mobile availability, privacy posture, and subscription path.",
+    websiteUrl: "https://backyard.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://backyard.ai",
+    status: "published",
+    editorScore: 7,
+    popularityScore: 64,
+    categorySlugs: ["character-roleplay-ai", "private-adult-ai-chat"],
+    supportsNsfwChat: true,
+    supportsVoice: true,
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    requiresCreditCard: false,
+    nsfwPolicySummary:
+      "Official positioning highlights fictional text and voice chats with no filters; buyers should still check current community guidelines before purchase.",
+    privacySummary:
+      "Privacy review focuses on local or private-chat claims, app access, account controls, and subscription handling.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "dippy-ai",
+    name: "Dippy AI",
+    tagline: "Character chat and roleplay app tracked for free access and character-creation signals.",
+    description:
+      "Dippy AI is tracked as a character chat and roleplay product for buyers comparing free access, roleplay depth, character creation, platform availability, and policy clarity.",
+    websiteUrl: "https://www.dippy.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.dippy.ai",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 68,
+    categorySlugs: ["character-roleplay-ai", "ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a character chat product; official pages should be checked before assuming adult-use policy support.",
+    privacySummary:
+      "Privacy review focuses on login requirements, app access, memory claims, and visible policy language.",
+    pricingModel: "free",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "chai-ai",
+    name: "CHAI",
+    tagline: "Social AI character platform tracked for mobile access, custom characters, and policy clarity.",
+    description:
+      "CHAI is tracked as a social AI character platform for buyers comparing mobile availability, custom character workflows, model depth, account requirements, and current policy boundaries.",
+    websiteUrl: "https://www.chai-research.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.chai-research.com",
+    status: "published",
+    editorScore: 7,
+    popularityScore: 78,
+    categorySlugs: ["character-roleplay-ai", "ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: false,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as an adult-adjacent social AI platform; buyers should verify current safety and content rules before relying on it for adult chat.",
+    privacySummary:
+      "Privacy review focuses on mobile account setup, app policy links, model personalization, and support paths.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "xoul-ai",
+    name: "Xoul",
+    tagline: "Storytelling and character platform tracked for subscriptions, energy limits, and privacy controls.",
+    description:
+      "Xoul is tracked for users comparing AI character and storytelling platforms by free energy limits, subscription tiers, voice and image features, private chats, and policy controls.",
+    websiteUrl: "https://xoul.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://xoul.ai",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 55,
+    categorySlugs: ["character-roleplay-ai", "private-adult-ai-chat"],
+    supportsImageGeneration: true,
+    supportsVoice: true,
+    supportsPhoneCall: true,
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked for character and scenario policy boundaries, public showcase rules, and buyer-facing safety controls.",
+    privacySummary:
+      "Privacy review focuses on private-chat statements, account deletion controls, subscription handling, and data-policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "pygmalion-ai",
+    name: "PygmalionAI",
+    tagline: "Text roleplay platform tracked for unrestricted-model positioning and private chat controls.",
+    description:
+      "PygmalionAI is tracked as a text-first roleplay platform for buyers comparing character cards, private chats, model controls, subscription support, and content-policy boundaries.",
+    websiteUrl: "https://pygmalion.chat",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://pygmalion.chat",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 60,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-chatbots", "private-adult-ai-chat"],
+    supportsNsfwChat: true,
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked for text-roleplay policy boundaries and unrestricted-model positioning, with no hosted media used on this site.",
+    privacySummary:
+      "Privacy review focuses on private chat controls, backup and deletion options, subscription support, and policy links.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "povchat-ai",
+    name: "PovChat AI",
+    tagline: "AI roleplay character app tracked for companion chat, mobile access, and model options.",
+    description:
+      "PovChat AI is tracked as a roleplay and companion-chat product for buyers comparing character depth, mobile access, model options, memory signals, and policy clarity.",
+    websiteUrl: "https://povchat.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://povchat.ai",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 50,
+    categorySlugs: ["character-roleplay-ai", "ai-girlfriend-apps"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a roleplay and companion-chat product; adult-use support should be verified against current official rules.",
+    privacySummary:
+      "Privacy review focuses on mobile app access, account requirements, memory claims, and official policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "sillytavern",
+    name: "SillyTavern",
+    tagline: "LLM frontend tracked for private roleplay setup, model choice, and self-managed workflows.",
+    description:
+      "SillyTavern is tracked as an LLM frontend for users comparing self-managed character chat workflows, model flexibility, local setup needs, and privacy tradeoffs.",
+    websiteUrl: "https://sillytavern.app",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://sillytavern.app",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 66,
+    categorySlugs: ["character-roleplay-ai", "private-adult-ai-chat"],
+    supportsCharacterCreation: true,
+    hasWebApp: false,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a self-managed roleplay frontend where policy support depends on the selected model and deployment setup.",
+    privacySummary:
+      "Privacy review focuses on local setup, selected model provider, account exposure, and user-managed data controls.",
+    pricingModel: "free",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "character-ai",
+    name: "Character.AI",
+    tagline: "Mainstream character chat platform tracked for persona creation, mobile access, and policy limits.",
+    description:
+      "Character.AI is tracked as an adult-adjacent character chat platform for buyers comparing mainstream persona chat, custom character workflows, mobile availability, free access, and stricter policy boundaries.",
+    websiteUrl: "https://character.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://character.ai",
+    status: "published",
+    editorScore: 7.4,
+    popularityScore: 88,
+    categorySlugs: ["character-roleplay-ai"],
+    supportsCharacterCreation: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a mainstream character-chat alternative with restrictive policy expectations; adult-use support is not assumed.",
+    privacySummary:
+      "Privacy review focuses on account-based chats, mobile app access, saved character interactions, and official safety-policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "paradot-ai",
+    name: "Paradot AI",
+    tagline: "AI companion app tracked for relationship-style chat, app access, and subscription positioning.",
+    description:
+      "Paradot AI is tracked as an AI companion product for buyers comparing relationship-style conversations, app availability, web access, free evaluation paths, and current policy clarity.",
+    websiteUrl: "https://www.paradot.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://www.paradot.ai",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 58,
+    categorySlugs: ["ai-girlfriend-apps", "character-roleplay-ai"],
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a companion-chat product where adult-use support should be checked against current official rules before purchase.",
+    privacySummary:
+      "Privacy review focuses on account setup, app store access, saved companion memory, and official privacy-policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "eva-ai",
+    name: "EVA AI",
+    tagline: "AI companion chat app tracked for private conversations, app availability, and paid-plan signals.",
+    description:
+      "EVA AI is tracked as a companion chat product for users comparing app-based conversations, relationship-style positioning, free access, paid-plan paths, and privacy notes.",
+    websiteUrl: "https://evaapp.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://evaapp.ai",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 61,
+    categorySlugs: ["ai-girlfriend-apps", "private-adult-ai-chat"],
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as an adult-adjacent companion app; buyers should verify current chat boundaries and safety rules before relying on it.",
+    privacySummary:
+      "Privacy review focuses on mobile account setup, conversation history, subscription handling, and visible policy links.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "risuai",
+    name: "RisuAI",
+    tagline: "Self-managed AI chat frontend tracked for local storage, model choice, and roleplay workflows.",
+    description:
+      "RisuAI is tracked as a self-managed AI chat frontend for users comparing local-first character chat setups, model-provider flexibility, lorebook-style controls, and privacy tradeoffs.",
+    websiteUrl: "https://risuai.net",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://risuai.net",
+    status: "published",
+    editorScore: 6.7,
+    popularityScore: 45,
+    categorySlugs: ["character-roleplay-ai", "private-adult-ai-chat"],
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a user-managed roleplay frontend where allowed content depends on the selected model and deployment setup.",
+    privacySummary:
+      "Privacy review focuses on local storage, imported character data, selected model providers, and user-managed backup or sync choices.",
+    pricingModel: "free",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "shapes-inc",
+    name: "Shapes Inc.",
+    tagline: "AI character network tracked for custom personalities, voice features, and community integrations.",
+    description:
+      "Shapes Inc. is tracked as an AI character platform for buyers comparing custom personality setup, cross-platform chat integrations, voice features, creator tools, and policy visibility.",
+    websiteUrl: "https://shapes.inc",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://shapes.inc",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 52,
+    categorySlugs: ["character-roleplay-ai"],
+    supportsVoice: true,
+    supportsCharacterCreation: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as a character platform with community and integration surfaces; adult-use support is not assumed without current policy review.",
+    privacySummary:
+      "Privacy review focuses on connected chat platforms, creator controls, stored character settings, and account-management paths.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "yodayo",
+    name: "Yodayo",
+    tagline: "Anime-focused AI creation platform tracked for chat, image, video, voice, and mobile access.",
+    description:
+      "Yodayo is tracked as an anime-focused AI creation and chat platform for users comparing character chat, image workflows, video and voice features, mobile access, free credits, and policy boundaries.",
+    websiteUrl: "https://yodayo.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://yodayo.com",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 63,
+    categorySlugs: ["character-roleplay-ai", "nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsVideoGeneration: true,
+    supportsVoice: true,
+    supportsCharacterCreation: true,
+    supportsAnimeStyle: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as an image-capable anime and character platform; this site stores no generated media and adult-use policy should be verified before use.",
+    privacySummary:
+      "Privacy review focuses on account-based creation, public sharing settings, mobile app access, and paid-credit handling.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "pixai",
+    name: "PixAI",
+    tagline: "Anime image generator tracked for model choice, mobile app access, and credit-based workflows.",
+    description:
+      "PixAI is tracked as an anime-style AI image platform for buyers comparing model selection, browser and mobile creation, free credits, paid-credit paths, and policy controls.",
+    websiteUrl: "https://pixai.art",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://pixai.art",
+    status: "published",
+    editorScore: 6.7,
+    popularityScore: 57,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsAnimeStyle: true,
+    hasMobileApp: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as an image-generation software record only; users should review current content rules before assuming adult-use support.",
+    privacySummary:
+      "Privacy review focuses on account-based generation, public gallery settings, credit purchases, and visible policy links.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "tensor-art",
+    name: "Tensor.Art",
+    tagline: "AI image and model platform tracked for generation, model hosting, video tools, and free credits.",
+    description:
+      "Tensor.Art is tracked as an AI image and model platform for users comparing text-to-image workflows, hosted model access, video tools, free credits, and content-policy controls.",
+    websiteUrl: "https://tensor.art",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://tensor.art",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 64,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsVideoGeneration: true,
+    supportsAnimeStyle: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked for image and model workflows with policy review required; this directory does not host or embed generated media.",
+    privacySummary:
+      "Privacy review focuses on account creation, public model or post visibility, credit handling, and official moderation controls.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "dezgo",
+    name: "Dezgo",
+    tagline: "Web-based AI image toolkit tracked for text-to-image, editing, video, and free access.",
+    description:
+      "Dezgo is tracked as a web-based AI creation toolkit for buyers comparing text-to-image generation, image editing, image-to-video workflows, free access, and policy visibility.",
+    websiteUrl: "https://dezgo.com",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://dezgo.com",
+    status: "published",
+    editorScore: 6.4,
+    popularityScore: 49,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsVideoGeneration: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    nsfwPolicySummary:
+      "Tracked as an image-tool record with adult-use support not assumed; official rules should be checked before any sensitive workflow.",
+    privacySummary:
+      "Privacy review focuses on browser-based generation, account requirements, output visibility, and whether paid or API usage changes retention.",
+    pricingModel: "free",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "ideogram",
+    name: "Ideogram",
+    tagline: "AI image generator tracked for prompt rendering, style control, free access, and paid tiers.",
+    description:
+      "Ideogram is tracked as a mainstream AI image generator for buyers comparing prompt rendering, style controls, free access, paid-plan positioning, and current content-policy limits.",
+    websiteUrl: "https://ideogram.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://ideogram.ai",
+    status: "published",
+    editorScore: 6.6,
+    popularityScore: 56,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a mainstream image-tool record; adult-use support is not assumed and official content rules should be checked before use.",
+    privacySummary:
+      "Privacy review focuses on account-based generation, paid-plan handling, public sharing controls, and visible policy links.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "leonardo-ai",
+    name: "Leonardo.Ai",
+    tagline: "AI creative suite tracked for image, video, canvas editing, and commercial workflow signals.",
+    description:
+      "Leonardo.Ai is tracked as a mainstream AI creative suite for buyers comparing image generation, video generation, editing canvas workflows, free access, and paid-plan positioning.",
+    websiteUrl: "https://leonardo.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://leonardo.ai",
+    status: "published",
+    editorScore: 6.9,
+    popularityScore: 73,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsVideoGeneration: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a mainstream creative tool; adult-use support is not assumed and users should review current official content rules.",
+    privacySummary:
+      "Privacy review focuses on account-based generation, project storage, paid-plan handling, and public or private asset controls.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  {
+    slug: "getimg-ai",
+    name: "getimg.ai",
+    tagline: "AI creative toolkit tracked for image generation, editing, video, and API availability.",
+    description:
+      "getimg.ai is tracked as an AI creative toolkit for users comparing text-to-image generation, image editing, image-to-video tools, API availability, free access, and paid-credit options.",
+    websiteUrl: "https://getimg.ai",
+    logoUrl: "https://www.google.com/s2/favicons?sz=128&domain_url=https://getimg.ai",
+    status: "published",
+    editorScore: 6.8,
+    popularityScore: 66,
+    categorySlugs: ["nsfw-ai-image-generators"],
+    supportsImageGeneration: true,
+    supportsVideoGeneration: true,
+    supportsRealisticStyle: true,
+    hasWebApp: true,
+    hasFreePlan: true,
+    acceptsCard: true,
+    nsfwPolicySummary:
+      "Tracked as a mainstream image-tool record where adult-use support should be checked against current official content rules.",
+    privacySummary:
+      "Privacy review focuses on account storage, API usage, public asset settings, paid credits, and official privacy-policy visibility.",
+    pricingModel: "freemium",
+    affiliateProgramStatus: "none",
+    lastCheckedAt: "2026-07-10"
+  },
+  ...task24ExpansionTools
 ] as const satisfies readonly ToolInput[];
 
 export const directoryTools = rawDirectoryTools.map((tool) => toolSchema.parse(tool));
@@ -1562,6 +2064,24 @@ function overlapCount(toolA: ToolRecord, toolB: ToolRecord) {
 
 export function getToolBySlug(slug: string) {
   return directoryTools.find((tool) => tool.slug === slug);
+}
+
+export function getStaleToolRecords(
+  asOf = new Date(),
+  maxAgeDays = 30
+): readonly ToolRecord[] {
+  const cutoff = asOf.getTime() - maxAgeDays * 24 * 60 * 60 * 1000;
+
+  return directoryTools
+    .filter((tool) => {
+      if (tool.status !== "published") {
+        return false;
+      }
+
+      const checkedAt = Date.parse(`${tool.lastCheckedAt}T00:00:00Z`);
+      return !Number.isFinite(checkedAt) || checkedAt < cutoff;
+    })
+    .sort((toolA, toolB) => toolA.lastCheckedAt.localeCompare(toolB.lastCheckedAt));
 }
 
 export function getRelatedTools(tool: ToolRecord, limit = 3) {
@@ -2025,6 +2545,25 @@ function hasComparisonContentGap(tool: ToolRecord) {
   return tool.pricingModel === "unknown" || (!tool.supportsVoice && !tool.supportsImageGeneration);
 }
 
+function hasMeaningfulComparisonDifference(toolA: ToolRecord, toolB: ToolRecord) {
+  const comparableSignals = [
+    toolA.pricingModel !== toolB.pricingModel,
+    toolA.hasFreePlan !== toolB.hasFreePlan,
+    toolA.hasFreeTrial !== toolB.hasFreeTrial,
+    toolA.supportsNsfwChat !== toolB.supportsNsfwChat,
+    toolA.supportsImageGeneration !== toolB.supportsImageGeneration,
+    toolA.supportsVoice !== toolB.supportsVoice,
+    toolA.supportsCharacterCreation !== toolB.supportsCharacterCreation,
+    toolA.hasMobileApp !== toolB.hasMobileApp,
+    toolA.supportsAnimeStyle !== toolB.supportsAnimeStyle,
+    toolA.supportsRealisticStyle !== toolB.supportsRealisticStyle,
+    toolA.acceptsPaypal !== toolB.acceptsPaypal,
+    toolA.acceptsCrypto !== toolB.acceptsCrypto
+  ];
+
+  return comparableSignals.filter(Boolean).length >= 2;
+}
+
 function getSharedCategoryLabels(toolA: ToolRecord, toolB: ToolRecord) {
   return toolA.categorySlugs
     .filter((slug) => toolB.categorySlugs.includes(slug))
@@ -2205,7 +2744,10 @@ export function getComparisonPageData(slug: string): ComparisonPageData | undefi
     pricingRows: getComparisonPricingRows(toolA, toolB),
     bestForRows: getComparisonBestForRows(toolA, toolB),
     alternativeLinks: getComparisonAlternativeLinks(toolA, toolB),
-    indexable: !hasComparisonContentGap(toolA) && !hasComparisonContentGap(toolB)
+    indexable:
+      !hasComparisonContentGap(toolA) &&
+      !hasComparisonContentGap(toolB) &&
+      hasMeaningfulComparisonDifference(toolA, toolB)
   };
 }
 

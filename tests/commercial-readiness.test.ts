@@ -15,12 +15,22 @@ describe("commercial readiness operations", () => {
     expect(ids).toContain("email-routing");
     expect(ids).toContain("search-submission");
     expect(ids).toContain("affiliate-url-approval");
+    expect(ids).toContain("api-mcp-keys");
     expect(ids).toContain("production-reachability");
     expect(summary.total).toBe(commercialReadinessItems.length);
-    expect(summary.manual).toBeGreaterThanOrEqual(3);
+    expect(summary.manual).toBeGreaterThanOrEqual(1);
     expect(commercialReadinessItems.find((item) => item.id === "supabase-production")?.status).toBe("ready");
     expect(commercialReadinessItems.find((item) => item.id === "outbound-click-persistence")?.status).toBe("ready");
     expect(commercialReadinessItems.find((item) => item.id === "production-reachability")?.status).toBe("ready");
+    expect(commercialReadinessItems.find((item) => item.id === "email-routing")?.status).toBe("ready");
+    expect(commercialReadinessItems.find((item) => item.id === "search-submission")?.status).toBe("ready");
+    expect(commercialReadinessItems.find((item) => item.id === "api-mcp-keys")?.status).toBe("manual");
+    expect(
+      commercialReadinessItems.find((item) => item.id === "affiliate-url-approval")?.evidence
+    ).toContain("Nomi");
+    expect(
+      commercialReadinessItems.find((item) => item.id === "affiliate-url-approval")?.evidence
+    ).toContain("CrushOn");
     const owners: readonly string[] = commercialReadinessItems.map((item) => item.owner);
     expect(owners).not.toContain("wosenkeji@gmail.com");
 

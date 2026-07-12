@@ -14,6 +14,18 @@ const rlsMigrationPath = join(
   "migrations",
   "202606240001_enable_rls.sql"
 );
+const functionHardeningMigrationPath = join(
+  process.cwd(),
+  "db",
+  "migrations",
+  "202607100001_harden_public_function_privileges.sql"
+);
+const outboundClickAttributionMigrationPath = join(
+  process.cwd(),
+  "db",
+  "migrations",
+  "202607120001_add_outbound_click_source_path.sql"
+);
 
 function readMigration() {
   return readFileSync(migrationPath, "utf8").toLowerCase();
@@ -21,6 +33,14 @@ function readMigration() {
 
 function readRlsMigration() {
   return readFileSync(rlsMigrationPath, "utf8").toLowerCase();
+}
+
+function readFunctionHardeningMigration() {
+  return readFileSync(functionHardeningMigrationPath, "utf8").toLowerCase();
+}
+
+function readOutboundClickAttributionMigration() {
+  return readFileSync(outboundClickAttributionMigrationPath, "utf8").toLowerCase();
 }
 
 describe("initial database schema migration", () => {
@@ -94,5 +114,26 @@ describe("initial database schema migration", () => {
 
     expect(sql).toContain("server-only supabase service role client");
     expect(sql).toContain("validated server-side mutations");
+  });
+
+  it("hardens public functions reported by Supabase advisors", () => {
+    const sql = readFunctionHardeningMigration();
+
+    expect(sql).toContain("create or replace function public.set_updated_at()");
+    expect(sql).toContain("set search_path = ''");
+    expect(sql).toContain(
+      "revoke execute on all functions in schema public from public, anon, authenticated"
+    );
+    expect(sql).toContain(
+      "revoke execute on functions from public, anon, authenticated"
+    );
+  });
+
+  it("stores a normalized source path for outbound click attribution", () => {
+    const sql = readOutboundClickAttributionMigration();
+
+    expect(sql).toContain("alter table public.outbound_clicks");
+    expect(sql).toContain("add column if not exists source_path text");
+    expect(sql).toContain("outbound_clicks_source_path_idx");
   });
 });

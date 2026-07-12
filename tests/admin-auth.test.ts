@@ -37,6 +37,9 @@ describe("admin route source", () => {
     expect(loginSource).toContain("Password");
 
     expect(actionsSource).toContain("signInWithPassword");
+    expect(actionsSource).toContain("adminSignInSchema");
+    expect(actionsSource).toContain("safeParse");
+    expect(actionsSource).toContain('process.env.NODE_ENV === "production"');
     expect(actionsSource).toContain("signOut");
     expect(actionsSource).toContain("cookies");
 

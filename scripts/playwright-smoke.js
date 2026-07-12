@@ -1,6 +1,13 @@
 async (page) => {
   const baseUrl = "http://127.0.0.1:3001";
   const results = [];
+  const consoleErrors = [];
+
+  page.on("console", (message) => {
+    if (message.type() === "error") {
+      consoleErrors.push(message.text());
+    }
+  });
 
   function urlFor(path) {
     return `${baseUrl}${path}`;
@@ -96,6 +103,26 @@ async (page) => {
     title: "Candy AI vs Nomi AI",
     text: "Feature comparison"
   });
+  await inspectPage("Best page", "/best/ai-girlfriend-apps", {
+    path: "/best/ai-girlfriend-apps",
+    title: "AI girlfriend apps",
+    text: "Ranking methodology"
+  });
+  await inspectPage("Alternatives page", "/alternatives/candy-ai", {
+    path: "/alternatives/candy-ai",
+    title: "Candy AI alternatives",
+    text: "Recommended alternatives"
+  });
+  await inspectPage("Pricing page", "/pricing/candy-ai", {
+    path: "/pricing/candy-ai",
+    title: "Candy AI pricing",
+    text: "Pricing snapshot"
+  });
+  await inspectPage("Coupon page", "/coupons/candy-ai", {
+    path: "/coupons/candy-ai",
+    title: "Candy AI coupons",
+    text: "No confirmed coupon"
+  });
   await inspectPage("Admin login protection", "/admin", {
     path: "/admin/login",
     title: "Admin login",
@@ -107,7 +134,8 @@ async (page) => {
     timeout: 30000
   });
   const redirectUrl = page.url();
-  if (!redirectUrl.startsWith("https://candy.ai")) {
+  const parsedRedirectUrl = new URL(redirectUrl);
+  if (parsedRedirectUrl.protocol !== "https:" || parsedRedirectUrl.hostname === "127.0.0.1") {
     throw new Error(`Affiliate redirect failed: ${redirectUrl}`);
   }
   results.push({
@@ -119,6 +147,11 @@ async (page) => {
   await assertMobileFits("Homepage mobile", "/");
   await assertMobileFits("Directory mobile", "/tools");
   await assertMobileFits("Comparison mobile", "/compare/candy-ai-vs-nomi-ai");
+  await assertMobileFits("Tool detail mobile", "/tools/candy-ai");
 
-  return results;
+  if (consoleErrors.length > 0) {
+    throw new Error(`Browser console errors detected: ${JSON.stringify(consoleErrors)}`);
+  }
+
+  return { results, consoleErrors };
 }
