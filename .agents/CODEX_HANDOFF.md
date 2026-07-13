@@ -32,8 +32,9 @@ Purpose: pass tasks across the 5 fixed conversations without relying on hidden c
 | `verified`                      | Release Gate verified                                         |
 | `done`                          | Finished and feedback written                                 |
 
-## Current Status Index (2026-07-13)
+## Current Status Index (2026-07-14)
 
+- `ADULTAIHUB-20260714-01`: `release_ready` — public seed source-of-truth decision recorded and Supabase migration history repaired without re-executing SQL; awaiting Release Gate read-only verification.
 - `ADULTAIHUB-20260713-03`: `verified` — Release Gate independently verified the production audit and both local MCP bridges in its restricted runtime.
 - `ADULTAIHUB-20260713-02`: `done` — superseded; authenticated Supabase CLI and GitHub transport are operational.
 
@@ -44,6 +45,35 @@ Purpose: pass tasks across the 5 fixed conversations without relying on hidden c
 - All other cards below are historical handoffs unless explicitly reactivated by Coordinator. Historical Muah ref `GE9CZKD0WI` is not current production state; current approved ref is `VSYIYHIV0N`.
 
 ## Active Handoffs
+
+```yaml
+id: ADULTAIHUB-20260714-01
+status: release_ready
+source_conversation: Adult AI Hub：今日任务和路线
+target_conversation: Adult AI Hub：验收和发布检查
+target_host_id: local
+target_thread_id: 019f3752-30f1-7620-b132-31dbac7f1223
+agent: Coordinator
+owner: Coordinator
+task: Verify the decided public seed source of truth and the repaired Supabase migration history for project kkfiefqwzlgwlrcjeixi.
+input:
+  - data/seed/tools.ts
+  - db/migrations/202607120001_add_outbound_click_source_path.sql
+  - Supabase project kkfiefqwzlgwlrcjeixi
+output_requirement: Confirm public pages still use version-controlled seed data, public.tools remains intentionally empty, migration 202607120001 is recorded as applied, and source_path column/index remain present.
+validation:
+  - Supabase migration list shows 202607120001 as applied.
+  - A single read-only query confirms source_path and outbound_clicks_source_path_idx.
+  - No SQL migration was re-executed.
+human_confirmation: not_required
+preflight_required: true
+mature_solution_required: true
+escalation_rule: stop_after_two_failed_attempts_or_account_uncertainty
+feedback_required: true
+release_gate_required: true
+coordinator_report_required: true
+notes: User authorized the decision and remote action. Seed remains public source of truth because all public routes import data/seed/tools.ts and public.tools has zero rows; database import/admin publication is a future reviewed workflow.
+```
 
 ```yaml
 id: ADULTAIHUB-20260713-03

@@ -56,10 +56,10 @@ Last updated: 2026-07-13
 - Firecrawl API key is still not configured; use the official provider flow and store any key only in an approved secret store or local environment.
 - Perplexity API key is still not configured; use the official provider flow and store any key only in an approved secret store or local environment.
 - Nomi AI uses a user-authorized account exception because Rewardful rejected the QQ mailbox and approved `wosenkeji@gmail.com` for this program only. All other new NSFW AI Hunt provider actions still default to `985064198@qq.com`.
-- Public production content uses the 100-record seed dataset, while the Supabase `tools` table currently contains zero rows. Treat seed-to-database synchronization/admin-publication integration as a remaining data-operations decision, not a public-page launch blocker.
-- Supabase migration history contains four timestamped production migrations; the applied `source_path` schema change is not represented by a matching local migration-history entry.
-- GitHub Actions has no workflow, and branch protection is unavailable for this private repository on the current GitHub plan.
-- Production response headers include `Referrer-Policy` and `X-Content-Type-Options`, but no Content-Security-Policy header was observed.
+- Public production content uses the 100-record seed dataset by explicit decision; the Supabase `tools` table currently contains zero rows and remains a future admin/persistence target. Do not switch public reads to the empty table.
+- Supabase migration history now contains five applied entries, including repaired version `202607120001` for the already-existing `source_path` column/index; no SQL was re-executed.
+- GitHub Actions release gates are merged and passing; public `main` now requires the `verify` check and disallows force-push/delete operations.
+- The current bundle adds a production `Content-Security-Policy` alongside `Referrer-Policy` and `X-Content-Type-Options`; live header confirmation remains pending the next production deployment.
 - Backup/restore rehearsal evidence, provider 2FA evidence, current GSC/Bing query exports, affiliate conversion/settlement evidence, and two consecutive 28-day measurement cycles remain missing.
 - Most outbound URLs correctly remain official URL fallbacks because approved affiliate tracking URLs are not yet available for most launch tools.
 
@@ -78,4 +78,4 @@ Do not commit secret or private values to the repository. Approved tracking URLs
 3. Keep Nomi AI routed through `/go/nomi-ai`; do not reuse the `wosenkeji@gmail.com` Rewardful exception for other provider actions without explicit user approval.
 4. If Firecrawl or Perplexity MCP/API workflows are needed, create/configure keys through official provider flows and keep all secret values out of the repository.
 5. Use the production click report and current GSC/Bing exports to run the first 7/28-day experiment cycle; do not scale pages before query and revenue evidence exists.
-6. Reconcile migration history, decide whether the Supabase `tools` table should become the public/admin source of truth, add CI/CSP where appropriate, and complete backup/restore and 2FA evidence.
+6. Reconcile migration history, decide whether the Supabase `tools` table should become the public/admin source of truth, complete the live deployment/CSP check, and complete backup/restore and 2FA evidence.
