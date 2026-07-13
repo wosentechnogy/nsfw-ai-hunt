@@ -4,18 +4,21 @@
 
 The current authoritative production target is the isolated Supabase project
 `kkfiefqwzlgwlrcjeixi` and Vercel project `985064198-2862s-projects/nsfw-ai-hunt`
-under the `985064198@qq.com` context. GitHub `main` is `5e0a4ab`; Vercel
+under the `985064198@qq.com` context. GitHub `main` is `3d59daf`; Vercel
 deployment `dpl_9te9BhrWrbrc7iPzWoaDDidFqKnb` is READY; production exposes
 1,155 sitemap URLs including 100 tool pages. Supabase project
 `kkfiefqwzlgwlrcjeixi` is ACTIVE_HEALTHY, `source_path` and its index exist,
 all public tables have RLS, advisors report no warnings/errors, and production
 contains 204 outbound clicks with 95 attributed rows at the latest attributed-row
-snapshot. Local typecheck, lint,
+snapshot. Supabase migration history now records the applied `source_path`
+version `202607120001`; public pages deliberately continue to use the
+version-controlled seed dataset while `public.tools` remains empty. Local typecheck, lint,
 89/90 tests (one intentionally skipped), build, and official-registry audit
 pass. Current gaps are operational evidence and growth outcomes: migration
-history reconciliation, a live authenticated admin-report smoke check,
+post-merge production recheck, a live authenticated admin-report smoke check,
 GSC/Bing query exports, affiliate conversion/settlement evidence, backup/restore
-rehearsal, 2FA evidence, CI/branch policy, CSP coverage, and two consecutive
+rehearsal, 2FA evidence, live authenticated admin verification, CSP deployment
+confirmation, and two consecutive
 28-day measurement cycles.
 
 Last updated: 2026-07-13

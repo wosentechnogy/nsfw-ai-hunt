@@ -11,8 +11,9 @@ Purpose: short task completion, blocker, and verification notes from the fixed c
 - Every executing specialist must report back to Coordinator after writing feedback.
 - Every `release_ready` specialist implementation must be sent to Release Gate, or the entry must state why Release Gate is not required.
 
-## Current Status Index (2026-07-13)
+## Current Status Index (2026-07-14)
 
+- `ADULTAIHUB-20260714-01`: `release_ready` — public seed remains the deliberate source of truth; Supabase migration history was repaired for the already-applied source_path schema change without re-running SQL.
 - `ADULTAIHUB-20260713-03`: `verified` — Release Gate independently verified the production audit plus private GitHub reads and production Supabase read-only queries through the rebuilt local MCP bridges.
 - `ADULTAIHUB-20260713-02`: `done` — superseded by `ADULTAIHUB-20260713-03`; authenticated local Supabase CLI and GitHub transport are now working.
 
@@ -30,6 +31,38 @@ Purpose: short task completion, blocker, and verification notes from the fixed c
 - `ADULTAIHUB-20260711-03`: `verified` — Muah correction is deployed and verified with tracking ref `VSYIYHIV0N`.
 - `ADULTAIHUB-20260711-04`: `done` — `origin/main` is freshly fetched and local `main`/`origin/main` are synchronized to `5e0a4ab`; the earlier ancestry blocker is obsolete.
 - Historical entries below are retained as audit evidence. Older Muah ref `GE9CZKD0WI` and older baseline references are historical only and must not be treated as current production state.
+
+```yaml
+id: ADULTAIHUB-20260714-01
+completed_at: 2026-07-14T00:00:00+08:00
+agent: Coordinator
+status: release_ready
+summary:
+  - Chose the version-controlled 100-record seed dataset as the current public source of truth because all public routes import data/seed/tools.ts and production public.tools is empty.
+  - Kept public.tools as a future admin/persistence target; switching now would make public pages depend on an empty table.
+  - Used the official Supabase CLI migration repair flow through a temporary supabase/migrations mapping to mark 202607120001 applied without re-executing its idempotent SQL.
+changed_files:
+  - TASKS.md
+  - PROJECT_MEMORY.md
+  - COMMERCIAL_LAUNCH_STATUS.md
+  - docs/reports/2026-07-13-completion-audit.md
+  - .agents/CODEX_FEEDBACK.md
+  - .agents/CODEX_HANDOFF.md
+verification:
+  - Supabase migration list shows remote 202607120001 as applied alongside the four existing entries.
+  - Single read-only query confirms outbound_clicks.source_path and outbound_clicks_source_path_idx are present.
+  - Temporary migration directory was cleaned; no SQL migration was re-executed.
+account_gate:
+  - Supabase project kkfiefqwzlgwlrcjeixi and 985 account context verified.
+mature_solution_gate:
+  - Supabase official changelog, CLI help, migration repair, existing db/migrations convention, and current route imports checked.
+release_gate:
+  - sent
+coordinator_report:
+  - sent
+residual_risks:
+  - A reviewed seed-to-database import/admin publication workflow is still needed before public reads can move to public.tools.
+```
 
 ```yaml
 id: ADULTAIHUB-20260713-03
