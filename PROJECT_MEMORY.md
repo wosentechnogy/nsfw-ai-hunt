@@ -1,6 +1,24 @@
 # PROJECT MEMORY
 
-Last updated: 2026-06-25
+## Current execution state — 2026-07-13
+
+The current authoritative production target is the isolated Supabase project
+`kkfiefqwzlgwlrcjeixi` and Vercel project `985064198-2862s-projects/nsfw-ai-hunt`
+under the `985064198@qq.com` context. GitHub `main` is `5e0a4ab`; Vercel
+deployment `dpl_9te9BhrWrbrc7iPzWoaDDidFqKnb` is READY; production exposes
+1,155 sitemap URLs including 100 tool pages. Supabase project
+`kkfiefqwzlgwlrcjeixi` is ACTIVE_HEALTHY, `source_path` and its index exist,
+all public tables have RLS, advisors report no warnings/errors, and production
+contains 204 outbound clicks with 95 attributed rows at the latest attributed-row
+snapshot. Local typecheck, lint,
+89/90 tests (one intentionally skipped), build, and official-registry audit
+pass. Current gaps are operational evidence and growth outcomes: migration
+history reconciliation, a live authenticated admin-report smoke check,
+GSC/Bing query exports, affiliate conversion/settlement evidence, backup/restore
+rehearsal, 2FA evidence, CI/branch policy, CSP coverage, and two consecutive
+28-day measurement cycles.
+
+Last updated: 2026-07-13
 
 This file captures the important context from the planning conversation. Future agents should read this before implementation.
 
@@ -427,11 +445,11 @@ Production verification completed:
 
 Affiliate program state:
 
-- Muah AI is approved. Use `https://muah.ai/affiliate/track.php?ref=GE9CZKD0WI` as the approved affiliate URL.
-- CrushOn AI is not fully approved yet. Tapfiliate dashboard screenshots show the Friends of CrushonAI program as `Pending`, `View` disabled, Sources containing only Default, and Deeplink/Postbacks not exposing a tracking link yet.
-- Nomi AI application was submitted with `wosenkeji@gmail.com`; wait for `affiliate@nomi.ai`.
+- Muah AI is approved. Use the current direct-dashboard URL `https://muah.ai/affiliate/track.php?ref=VSYIYHIV0N` from the `985064198@qq.com` account. The older `GE9CZKD0WI` ID is historical and not confirmed as a CrakRevenue ID.
+- CrushOn AI is approved. Use `https://crushon.ai/?ref=zdbjmta&mist=1` only as `affiliateUrl`; keep `https://crushon.ai` as the official URL.
+- Nomi AI is approved. Use `https://nomi.ai/?via=ate` only as `affiliateUrl`; `wosenkeji@gmail.com` is an explicit Rewardful-only account exception and does not replace the default 985 account context.
 - SoulGen application was submitted with `wosenkeji@gmail.com`; wait for `hello@soulgen.ai`.
-- Candy AI application/status still needs retry or confirmation because the public affiliate page returned `403` from the current environment.
+- Candy AI is approved through CrakRevenue and its approved tracking URL is stored separately from the official `https://candy.ai` URL.
 
 Files updated for this checkpoint:
 
@@ -442,11 +460,11 @@ Files updated for this checkpoint:
 
 Important next continuation:
 
-1. Deploy the corrected affiliate state and Muah approved URL if not already deployed after the final docs/data edits.
-2. Verify `https://nsfwaihunt.com/go/muah-ai` redirects to the Muah tracking URL and logs `outbound_clicks`.
-3. Check CrushOn Tapfiliate periodically; only add the affiliate URL after `Pending` clears and an official deeplink/tracking link is available.
-4. Continue Task 29 remaining launch work: Cloudflare Email Routing destination verification, Google Search Console sitemap submission, and Bing Webmaster sitemap submission.
-5. Continue Task 30 growth loop: more affiliate applications, GSC/Bing query monitoring, and content/data expansion.
+1. Reconcile the applied `source_path` schema change with Supabase migration history.
+2. Decide whether the 100-record seed or the currently empty production `public.tools` table is the durable source of truth.
+3. Export current GSC/Bing query and page metrics and run the first 7/28-day measurement cycle.
+4. Verify the full query-to-settled-commission chain and at least one attributable, settleable affiliate commission.
+5. Complete authenticated admin smoke, backup/restore rehearsal, provider 2FA evidence, CI activation, and production CSP coverage.
 
 Security reminder:
 

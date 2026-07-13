@@ -1,5 +1,15 @@
 # TASKS
 
+## Current execution override — 2026-07-13
+
+The historical task notes below are retained for audit context. The current
+authoritative state is:
+
+- **Task 24 — Seed First 100 Tools:** complete locally and in production; the production sitemap exposes 100 tool URLs.
+- **Task 29 — Production Deploy:** complete for the current bundle. GitHub `main` is `5e0a4ab`, Vercel deployment `dpl_9te9BhrWrbrc7iPzWoaDDidFqKnb` is READY, the sitemap exposes 1,155 URLs, and Supabase persists `source_path` with its index.
+- **Task 30 — Post-Launch Growth Loop:** active but not proven. Production has 204 outbound clicks and 95 attributed clicks at the latest attributed-row snapshot; current GSC/Bing query exports, affiliate conversion/settlement evidence, and two consecutive 28-day cycles remain missing.
+- **Security and operations:** local release preflight and official-registry dependency audit pass, all public tables have RLS, Supabase advisors report no warning/error issues, and a GitHub Actions release-gates workflow is prepared. Remaining operations gaps are activating/verifying that workflow, migration-history reconciliation, backup/restore rehearsal evidence, 2FA evidence, branch policy, and production CSP coverage.
+
 Use this file as the execution queue. Complete tasks in order unless the user explicitly reprioritizes.
 
 ## Phase 0: Project Setup
