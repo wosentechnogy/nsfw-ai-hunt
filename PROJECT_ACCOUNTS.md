@@ -19,11 +19,15 @@ This file stores non-secret account context only. Do not store passwords, API ke
 
 Do not mix account, MCP, API key, or deployment context across project families.
 
-| Project / asset family | Primary account context | Notes |
-|---|---|---|
-| `nsfw-ai-hunt` / `nsfwaihunt.com` | `985064198@qq.com` | Same Adult AI project under two identifiers: repo/project slug and production domain. Keep GitHub, Supabase, Cloudflare, Vercel, Google/Search Console, and related MCP access isolated here wherever possible. |
-| `AgentFlowKits` | `wosenkeji@gmail.com` | Separate non-NSFW asset family. Do not reuse for `nsfw-ai-hunt` secrets or MCP authorization. |
-| `rankseen` | `wosenkeji@gmail.com` | Separate non-NSFW asset family. Do not reuse for `nsfw-ai-hunt` secrets or MCP authorization. |
+| Project / asset family            | Primary account context | Notes                                                                                                                                                                                                           |
+| --------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nsfw-ai-hunt` / `nsfwaihunt.com` | `985064198@qq.com`      | Same Adult AI project under two identifiers: repo/project slug and production domain. Keep GitHub, Supabase, Cloudflare, Vercel, Google/Search Console, and related MCP access isolated here wherever possible. |
+| `AgentFlowKits`                   | `wosenkeji@gmail.com`   | Separate non-NSFW asset family. Do not reuse for `nsfw-ai-hunt` secrets or MCP authorization.                                                                                                                   |
+| `rankseen`                        | `wosenkeji@gmail.com`   | Separate non-NSFW asset family. Do not reuse for `nsfw-ai-hunt` secrets or MCP authorization.                                                                                                                   |
+
+### Authorized Provider Exceptions
+
+- Nomi AI / Rewardful: user authorized `wosenkeji@gmail.com` for the Nomi affiliate program only because Rewardful rejected the QQ mailbox. This does not change the default NSFW AI Hunt account context; all other new provider, API, dashboard, deployment, and MCP actions still default to `985064198@qq.com` unless the user explicitly approves another exception.
 
 ### Cloudflare
 
@@ -51,11 +55,11 @@ Do not mix account, MCP, API key, or deployment context across project families.
 
 - Vercel account separation follows the same project-family rule as GitHub/Supabase.
 
-| Project / asset family | Vercel account context | Notes |
-|---|---|---|
-| `nsfw-ai-hunt` / `nsfwaihunt.com` | `985064198@qq.com` | Current Adult AI project account context. Use this account for final production ownership, environment variables, domains, and deploy access. |
-| `AgentFlowKits` | `wosenkeji@gmail.com` | Separate non-NSFW Vercel account context. Do not reuse for `nsfw-ai-hunt` deployment secrets. |
-| `rankseen` | `wosenkeji@gmail.com` | Separate non-NSFW Vercel account context. Do not reuse for `nsfw-ai-hunt` deployment secrets. |
+| Project / asset family            | Vercel account context | Notes                                                                                                                                         |
+| --------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nsfw-ai-hunt` / `nsfwaihunt.com` | `985064198@qq.com`     | Current Adult AI project account context. Use this account for final production ownership, environment variables, domains, and deploy access. |
+| `AgentFlowKits`                   | `wosenkeji@gmail.com`  | Separate non-NSFW Vercel account context. Do not reuse for `nsfw-ai-hunt` deployment secrets.                                                 |
+| `rankseen`                        | `wosenkeji@gmail.com`  | Separate non-NSFW Vercel account context. Do not reuse for `nsfw-ai-hunt` deployment secrets.                                                 |
 
 - Previously recorded project: `wosenkeji-creators-projects/nsfw-ai-hunt` (deleted by user from Vercel dashboard on 2026-07-09)
 - Current isolated project: `985064198-2862s-projects/nsfw-ai-hunt`
@@ -87,10 +91,10 @@ Do not mix account, MCP, API key, or deployment context across project families.
   - Storage only if needed for safe non-explicit assets
 - MCP rule: keep separate Codex MCP entries per Supabase project/account. Do not overwrite one project with another.
 
-| Project | Account / organization context | Project ref | Project URL | Codex MCP name | MCP status | Notes |
-|---|---|---|---|---|---|---|
-| NSFW AI Hunt isolated project | `985064198@qq.com` / `wosentechnogy's Org` | `kkfiefqwzlgwlrcjeixi` | `https://kkfiefqwzlgwlrcjeixi.supabase.co` | `supabase` | OAuth logged in on 2026-07-09 | Current Supabase project for `wosentechnogy/nsfw-ai-hunt`. REST endpoint is `https://kkfiefqwzlgwlrcjeixi.supabase.co/rest/v1/`. |
-| Wosenkeji legacy Supabase project context | `wosenkeji@gmail.com` account family | `cchmrnjcbowqdpmtcksh` | `https://cchmrnjcbowqdpmtcksh.supabase.co` | `supabase-nsfwaihunt-legacy` | Configured, but OAuth requires an account that is a member of that Supabase organization | Do not treat this as the current `nsfw-ai-hunt` isolated project unless the user explicitly says to reconnect it. The `985064198@qq.com` account cannot authorize this MCP unless it is invited into that organization/project. |
+| Project                                   | Account / organization context             | Project ref            | Project URL                                | Codex MCP name               | MCP status                                                                               | Notes                                                                                                                                                                                                                           |
+| ----------------------------------------- | ------------------------------------------ | ---------------------- | ------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| NSFW AI Hunt isolated project             | `985064198@qq.com` / `wosentechnogy's Org` | `kkfiefqwzlgwlrcjeixi` | `https://kkfiefqwzlgwlrcjeixi.supabase.co` | `supabase`                   | OAuth logged in on 2026-07-09                                                            | Current Supabase project for `wosentechnogy/nsfw-ai-hunt`. REST endpoint is `https://kkfiefqwzlgwlrcjeixi.supabase.co/rest/v1/`.                                                                                                |
+| Wosenkeji legacy Supabase project context | `wosenkeji@gmail.com` account family       | `cchmrnjcbowqdpmtcksh` | `https://cchmrnjcbowqdpmtcksh.supabase.co` | `supabase-nsfwaihunt-legacy` | Configured, but OAuth requires an account that is a member of that Supabase organization | Do not treat this as the current `nsfw-ai-hunt` isolated project unless the user explicitly says to reconnect it. The `985064198@qq.com` account cannot authorize this MCP unless it is invited into that organization/project. |
 
 - Supabase publishable keys may be placed in `NEXT_PUBLIC_SUPABASE_ANON_KEY` / Vercel public environment variables when needed.
 - Supabase secret/service keys must remain server-only in `SUPABASE_SERVICE_ROLE_KEY` or Vercel server environment variables.
@@ -116,8 +120,6 @@ Do not mix account, MCP, API key, or deployment context across project families.
 
 ## Next Account Tasks
 
-1. Verify the correct `985064198@qq.com` destination/account context for NSFW AI Hunt Cloudflare Email Routing.
-2. Create project email routes such as `contact@nsfwaihunt.com`.
-3. Add Google Search Console domain property and submit sitemap.
-4. Add Bing Webmaster property and submit sitemap.
-5. Enable or confirm 2FA on Cloudflare, GitHub, Vercel, Supabase, and Google.
+1. Maintain Cloudflare Email Routing, Google Search Console, and Bing Webmaster through the official `985064198@qq.com` account context after the user-confirmed setup.
+2. Enable or confirm 2FA on Cloudflare, GitHub, Vercel, Supabase, and Google.
+3. If Firecrawl or Perplexity integrations are enabled, create provider keys through official flows and store the values only in an approved secret store or local environment.

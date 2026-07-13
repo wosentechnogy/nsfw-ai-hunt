@@ -11,6 +11,7 @@ Every fixed conversation must also read:
 1. `.agents/conversation-agent-map.md`
 2. `.agents/CODEX_INTAKE.md`
 3. `.agents/CODEX_HANDOFF.md`
+4. `.agents/AGENT_OPERATING_STANDARD.md`
 
 Specialist conversations write completion, blocker, and verification notes to `.agents/CODEX_FEEDBACK.md`.
 
@@ -30,6 +31,35 @@ These priorities apply before any implementation, deployment, account, API, MCP,
    - Use `.agents/CODEX_INTAKE.md`, `.agents/CODEX_HANDOFF.md`, and the Codex cross-thread tools so Data SEO, Product Engineering, Compliance Monetization, and Release Gate agents execute their own scoped work.
    - Do not silently keep specialist work inside the Coordinator conversation when a fixed specialist conversation should own it.
 
+## 0.6 Mandatory Agent Execution Contract
+
+Every fixed conversation must follow `.agents/AGENT_OPERATING_STANDARD.md`.
+
+Before task execution, every specialist agent must create a visible preflight note in its own conversation that includes:
+
+1. Handoff ID and one-sentence task restatement.
+2. Account identity gate result.
+3. Skills checked, existing repo pattern checked, and official/open-source/mature route checked.
+4. File and ownership scope.
+5. Verification plan.
+6. Escalation trigger.
+
+No agent may continue blind trial-and-error after repeated failures:
+
+- If the same command/path fails twice, stop and report.
+- If two different approaches fail without a new diagnosis, stop and report.
+- If account, org, team, OAuth, captcha, billing, payout, secret, or permission state is unclear, stop and report.
+- If the needed work crosses into another fixed conversation's domain, stop and route.
+
+Completion is not valid unless the executing specialist:
+
+1. Writes `.agents/CODEX_FEEDBACK.md`.
+2. Updates the matching `.agents/CODEX_HANDOFF.md` card.
+3. Reports back to Coordinator.
+4. Sends `release_ready` work to Release Gate, or records why Release Gate is not required.
+
+Release Gate is the only role that may mark a specialist implementation as `verified`.
+
 ## 1. Required Reading Order
 
 Before making code changes, read:
@@ -41,6 +71,7 @@ Before making code changes, read:
 5. `ARCHITECTURE.md`
 6. `TASKS.md`
 7. `AGENTS.md`
+8. `.agents/AGENT_OPERATING_STANDARD.md`
 
 If a task conflicts with these files, ask for clarification unless the user explicitly overrides the rule.
 
@@ -128,11 +159,14 @@ Before marking a feature complete:
 For each task:
 
 1. Restate the task in one sentence.
-2. Inspect existing files.
-3. Make the smallest coherent implementation.
-4. Add or update tests when risk justifies it.
-5. Run verification.
-6. Summarize changed files and remaining risks.
+2. Run the mandatory preflight from `.agents/AGENT_OPERATING_STANDARD.md`.
+3. Inspect existing files.
+4. Check skills, existing patterns, official docs, and mature open-source references before custom work.
+5. Make the smallest coherent implementation.
+6. Add or update tests when risk justifies it.
+7. Run verification.
+8. Write feedback, update handoff status, report Coordinator, and route `release_ready` work to Release Gate.
+9. Summarize changed files and remaining risks.
 
 Do not rewrite large unrelated areas.
 
