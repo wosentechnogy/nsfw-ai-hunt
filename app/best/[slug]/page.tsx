@@ -11,6 +11,7 @@ import {
   Scale,
   ShieldCheck
 } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -102,10 +103,10 @@ export default async function BestPage({ params }: BestPageProps) {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             {topRow ? (
               <Button asChild size="lg">
-                <Link href={topPickHref ?? topRow.ctaHref}>
+                <TrackedOutboundLink href={topPickHref ?? topRow.ctaHref}>
                   Visit top pick
                   <ExternalLink className="size-4" aria-hidden="true" />
-                </Link>
+                </TrackedOutboundLink>
               </Button>
             ) : null}
             <Button asChild variant="outline" size="lg">
@@ -188,10 +189,10 @@ export default async function BestPage({ params }: BestPageProps) {
                   <td className="px-4 py-4 font-semibold">{row.score}</td>
                   <td className="px-4 py-4">
                     <Button asChild size="sm">
-                      <Link href={row.ctaHref}>
+                      <TrackedOutboundLink href={row.ctaHref}>
                         Visit
                         <ExternalLink className="size-4" aria-hidden="true" />
-                      </Link>
+                      </TrackedOutboundLink>
                     </Button>
                   </td>
                 </tr>

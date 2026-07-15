@@ -9,6 +9,7 @@ import {
   LockKeyhole,
   Sparkles
 } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -148,10 +149,10 @@ export default async function AlternativePage({ params }: AlternativePageProps) 
                   <td className="px-4 py-4 font-semibold">{row.score}</td>
                   <td className="px-4 py-4">
                     <Button asChild size="sm">
-                      <Link href={`/go/${row.tool.slug}`}>
+                      <TrackedOutboundLink href={`/go/${row.tool.slug}`}>
                         Visit
                         <ExternalLink className="size-4" aria-hidden="true" />
-                      </Link>
+                      </TrackedOutboundLink>
                     </Button>
                   </td>
                 </tr>
@@ -173,7 +174,7 @@ export default async function AlternativePage({ params }: AlternativePageProps) 
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{slice.row.tool.tagline}</p>
               <div className="mt-4 flex gap-3">
                 <Button asChild size="sm">
-                  <Link href={`/go/${slice.row.tool.slug}`}>Visit</Link>
+                  <TrackedOutboundLink href={`/go/${slice.row.tool.slug}`}>Visit</TrackedOutboundLink>
                 </Button>
                 <Button asChild size="sm" variant="outline">
                   <Link href={slice.row.toolHref}>Profile</Link>

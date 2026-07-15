@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CalendarCheck, ExternalLink } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -97,10 +98,10 @@ export default async function PricingPage({ params }: PricingPageProps) {
           </p>
           <div className="mt-6">
             <Button asChild size="lg">
-              <Link href={`/go/${data.tool.slug}`}>
+              <TrackedOutboundLink href={`/go/${data.tool.slug}`}>
                 Visit pricing path
                 <ExternalLink className="size-4" aria-hidden="true" />
-              </Link>
+              </TrackedOutboundLink>
             </Button>
           </div>
         </div>

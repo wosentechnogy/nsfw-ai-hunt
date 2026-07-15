@@ -12,6 +12,9 @@ describe("Playwright smoke coverage", () => {
 
     expect(source).toContain("Tool detail mobile");
     expect(source).toContain("consoleErrors");
+    expect(source).toContain("pageErrors");
+    expect(source).toContain("Browser console errors detected");
+    expect(source).toContain("Browser page errors detected");
     expect(source).toContain('parsedRedirectUrl.protocol !== "https:"');
     expect(source).not.toContain('startsWith("https://candy.ai")');
   });
