@@ -12,6 +12,7 @@ import {
   SlidersHorizontal,
   X
 } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -170,10 +171,10 @@ function ToolCard({ tool }: Readonly<{ tool: ToolRecord }>) {
           <Link href={`/tools/${tool.slug}`}>View profile</Link>
         </Button>
         <Button asChild variant="outline" className="w-full sm:w-auto">
-          <Link href={`/go/${tool.slug}`}>
+          <TrackedOutboundLink href={`/go/${tool.slug}`}>
             Visit tool
             <ExternalLink className="size-4" aria-hidden="true" />
-          </Link>
+          </TrackedOutboundLink>
         </Button>
       </div>
     </article>

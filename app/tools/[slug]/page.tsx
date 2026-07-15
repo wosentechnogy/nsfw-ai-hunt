@@ -12,6 +12,7 @@ import {
   TableProperties,
   XCircle
 } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -194,10 +195,10 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href={`/go/${tool.slug}`}>
+              <TrackedOutboundLink href={`/go/${tool.slug}`}>
                 Visit tool
                 <ExternalLink className="size-4" aria-hidden="true" />
-              </Link>
+              </TrackedOutboundLink>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href={tool.websiteUrl}>Official site</Link>

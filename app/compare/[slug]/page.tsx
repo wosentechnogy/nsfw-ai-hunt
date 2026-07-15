@@ -9,6 +9,7 @@ import {
   Scale,
   ShieldCheck
 } from "lucide-react";
+import { TrackedOutboundLink } from "@/components/common/tracked-outbound-link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -131,16 +132,16 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href={toolACTAHref}>
+              <TrackedOutboundLink href={toolACTAHref}>
                 Visit {data.toolA.name}
                 <ExternalLink className="size-4" aria-hidden="true" />
-              </Link>
+              </TrackedOutboundLink>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href={toolBCTAHref}>
+              <TrackedOutboundLink href={toolBCTAHref}>
                 Visit {data.toolB.name}
                 <ExternalLink className="size-4" aria-hidden="true" />
-              </Link>
+              </TrackedOutboundLink>
             </Button>
           </div>
         </div>

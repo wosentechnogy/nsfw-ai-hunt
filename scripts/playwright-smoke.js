@@ -2,11 +2,16 @@ async (page) => {
   const baseUrl = "http://127.0.0.1:3001";
   const results = [];
   const consoleErrors = [];
+  const pageErrors = [];
 
   page.on("console", (message) => {
     if (message.type() === "error") {
       consoleErrors.push(message.text());
     }
+  });
+
+  page.on("pageerror", (error) => {
+    pageErrors.push(error.message);
   });
 
   function urlFor(path) {
@@ -153,5 +158,9 @@ async (page) => {
     throw new Error(`Browser console errors detected: ${JSON.stringify(consoleErrors)}`);
   }
 
-  return { results, consoleErrors };
+  if (pageErrors.length > 0) {
+    throw new Error(`Browser page errors detected: ${JSON.stringify(pageErrors)}`);
+  }
+
+  return { results, consoleErrors, pageErrors };
 }
