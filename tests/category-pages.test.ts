@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  directoryCategories,
   getCategoryBySlug,
   getCategoryItemListJsonLd,
   getCategoryPageData,
@@ -9,6 +10,20 @@ import {
 } from "@/data/seed/tools";
 
 describe("category page data helpers", () => {
+  it("covers the expanded category page matrix with useful tool cohorts", () => {
+    expect(directoryCategories.length).toBeGreaterThanOrEqual(10);
+
+    for (const slug of [
+      "free-nsfw-ai-chatbots",
+      "voice-ai-companions",
+      "mobile-ai-companions",
+      "ai-tools-with-image-support",
+      "character-creation-ai"
+    ]) {
+      expect(getCategoryTools(slug).length, `${slug} should have a useful cohort`).toBeGreaterThan(2);
+    }
+  });
+
   it("finds category metadata by slug", () => {
     const category = getCategoryBySlug("nsfw-ai-chatbots");
 

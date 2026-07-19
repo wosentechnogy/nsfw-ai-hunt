@@ -4,11 +4,11 @@ import { describe, expect, it } from "vitest";
 import { getMoneyPageReview, getMoneyPageReviews } from "@/data/seed/tools";
 
 describe("money page review helpers", () => {
-  it("tracks 30 manually reviewed money pages with checked claims across the highest-value route types", () => {
+  it("tracks the manually reviewed money pages with checked claims across the highest-value route types", () => {
     const reviews = getMoneyPageReviews();
 
-    expect(reviews).toHaveLength(30);
-    expect(new Set(reviews.map((review) => review.route)).size).toBe(30);
+    expect(reviews).toHaveLength(35);
+    expect(new Set(reviews.map((review) => review.route)).size).toBe(35);
     expect(reviews.every((review) => review.reviewedOn === "2026-06-23")).toBe(true);
     expect(reviews.every((review) => review.claimChecks.length >= 2)).toBe(true);
     expect(reviews.some((review) => review.pageType === "best")).toBe(true);
