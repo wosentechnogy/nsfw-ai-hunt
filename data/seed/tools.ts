@@ -5,6 +5,7 @@ export type DirectoryCategory = Readonly<{
   slug: string;
   label: string;
   description: string;
+  toolPredicate?: (tool: ToolRecord) => boolean;
 }>;
 
 export type DirectoryFeatureFilter = Readonly<{
@@ -106,7 +107,35 @@ export type CategoryItemListJsonLd = Readonly<{
   }>[];
 }>;
 
-type BestPageSelector = "category" | "free-nsfw-chat" | "voice-companion" | "privacy" | "crypto";
+type BestPageSelector =
+  | "category"
+  | "free-nsfw-chat"
+  | "voice-companion"
+  | "privacy"
+  | "crypto"
+  | "feature";
+
+type BestPageFeature =
+  | "free-girlfriend"
+  | "free-roleplay"
+  | "voice"
+  | "mobile"
+  | "video"
+  | "anime"
+  | "realistic"
+  | "free-trial"
+  | "paypal"
+  | "card"
+  | "subscription"
+  | "credits"
+  | "web"
+  | "phone"
+  | "image-chat"
+  | "private-roleplay"
+  | "character"
+  | "image"
+  | "free-access"
+  | "rich-interaction";
 
 export type BestPageConfig = Readonly<{
   slug: string;
@@ -116,6 +145,7 @@ export type BestPageConfig = Readonly<{
   seoDescription: string;
   selector: BestPageSelector;
   categorySlug?: string;
+  feature?: BestPageFeature;
   useCase: string;
 }>;
 
@@ -261,7 +291,7 @@ export type MoneyPageReview = Readonly<{
   claimChecks: readonly string[];
 }>;
 
-export const directoryCategories = [
+export const directoryCategories: readonly DirectoryCategory[] = [
   {
     slug: "nsfw-ai-chatbots",
     label: "NSFW AI chatbots",
@@ -286,8 +316,38 @@ export const directoryCategories = [
     slug: "nsfw-ai-image-generators",
     label: "Image-capable tools",
     description: "Tools that may include image workflows, tracked without explicit media."
+  },
+  {
+    slug: "free-nsfw-ai-chatbots",
+    label: "Free NSFW AI chatbots",
+    description: "Chat-capable tools with a visible free plan or trial in the current structured data.",
+    toolPredicate: (tool) => tool.supportsNsfwChat && (tool.hasFreePlan || tool.hasFreeTrial)
+  },
+  {
+    slug: "voice-ai-companions",
+    label: "Voice AI companions",
+    description: "AI companion tools with a structured voice-support signal and comparison fields.",
+    toolPredicate: (tool) => tool.supportsVoice && tool.categorySlugs.includes("ai-girlfriend-apps")
+  },
+  {
+    slug: "mobile-ai-companions",
+    label: "Mobile AI companions",
+    description: "Companion tools with a structured mobile-app signal and visible product data.",
+    toolPredicate: (tool) => tool.hasMobileApp && tool.categorySlugs.includes("ai-girlfriend-apps")
+  },
+  {
+    slug: "ai-tools-with-image-support",
+    label: "AI tools with image support",
+    description: "Software records with structured image-generation support, presented without generated media.",
+    toolPredicate: (tool) => tool.supportsImageGeneration
+  },
+  {
+    slug: "character-creation-ai",
+    label: "Character creation AI",
+    description: "Tools with a structured character-creation signal for software comparison and roleplay research.",
+    toolPredicate: (tool) => tool.supportsCharacterCreation
   }
-] as const satisfies readonly DirectoryCategory[];
+];
 
 export const directoryFeatureFilters = [
   {
@@ -436,6 +496,236 @@ export const bestPageConfigs = [
       "Find adult AI tools that accept crypto, with pricing, policy notes, privacy signals, and last checked dates.",
     selector: "crypto",
     useCase: "crypto payment support"
+  },
+  {
+    slug: "free-nsfw-ai-chatbots",
+    title: "Best Free NSFW AI Chatbots",
+    description: "Free-entry chat tools ranked from structured free-plan and free-trial signals, with current policy and pricing fields visible.",
+    seoTitle: "Best Free NSFW AI Chatbots",
+    seoDescription: "Compare free-entry NSFW AI chatbots by free access, policy notes, pricing model, and privacy signals.",
+    selector: "category",
+    categorySlug: "free-nsfw-ai-chatbots",
+    useCase: "free adult AI chat evaluation"
+  },
+  {
+    slug: "voice-ai-companions",
+    title: "Best Voice AI Companions",
+    description: "Voice-capable companion tools ranked by structured voice support, pricing model, mobile signal, and policy notes.",
+    seoTitle: "Best Voice AI Companions",
+    seoDescription: "Compare voice AI companions by voice support, pricing, mobile access, and privacy notes.",
+    selector: "category",
+    categorySlug: "voice-ai-companions",
+    useCase: "voice companion features"
+  },
+  {
+    slug: "mobile-ai-companions",
+    title: "Best Mobile AI Companions",
+    description: "Companion tools with a structured mobile-app signal, ranked by visible feature coverage, pricing, and policy notes.",
+    seoTitle: "Best Mobile AI Companions",
+    seoDescription: "Compare mobile AI companions by app availability, pricing model, features, and privacy signals.",
+    selector: "category",
+    categorySlug: "mobile-ai-companions",
+    useCase: "mobile AI companion access"
+  },
+  {
+    slug: "ai-tools-with-image-support",
+    title: "Best AI Tools with Image Support",
+    description: "Image-capable software records ranked by structured image support, pricing model, style signals, and policy visibility without hosting generated media.",
+    seoTitle: "Best AI Tools with Image Support",
+    seoDescription: "Compare AI tools with image support by pricing, feature coverage, style signals, and policy notes.",
+    selector: "category",
+    categorySlug: "ai-tools-with-image-support",
+    useCase: "image-capable AI software"
+  },
+  {
+    slug: "character-creation-ai",
+    title: "Best Character Creation AI Tools",
+    description: "Character-creation tools ranked by structured creation support, roleplay fit, free access, pricing, and policy notes.",
+    seoTitle: "Best Character Creation AI Tools",
+    seoDescription: "Compare character creation AI tools by creation support, roleplay fit, pricing, free access, and privacy signals.",
+    selector: "category",
+    categorySlug: "character-creation-ai",
+    useCase: "character creation and roleplay"
+  },
+  {
+    slug: "free-nsfw-ai-girlfriend-apps",
+    title: "Best Free NSFW AI Girlfriend Apps",
+    description: "Companion apps with a visible free plan or trial, ranked by category fit, interaction signals, pricing model, and policy notes.",
+    seoTitle: "Best Free NSFW AI Girlfriend Apps",
+    seoDescription: "Compare free-entry AI girlfriend apps by free access, features, pricing, and privacy notes.",
+    selector: "feature",
+    feature: "free-girlfriend",
+    useCase: "free AI girlfriend app evaluation"
+  },
+  {
+    slug: "free-character-roleplay-ai",
+    title: "Best Free Character Roleplay AI",
+    description: "Character-roleplay tools with a visible free plan or trial, ranked by creation support, policy notes, and pricing model.",
+    seoTitle: "Best Free Character Roleplay AI",
+    seoDescription: "Compare free character roleplay AI tools by creation support, free access, pricing, and policy visibility.",
+    selector: "feature",
+    feature: "free-roleplay",
+    useCase: "free character roleplay evaluation"
+  },
+  {
+    slug: "voice-ai-chat-tools",
+    title: "Best Voice AI Chat Tools",
+    description: "Chat tools with a structured voice-support signal, ranked by interaction coverage, pricing, and privacy notes.",
+    seoTitle: "Best Voice AI Chat Tools",
+    seoDescription: "Compare voice AI chat tools by voice support, pricing model, free access, and privacy signals.",
+    selector: "feature",
+    feature: "voice",
+    useCase: "voice-enabled AI chat"
+  },
+  {
+    slug: "mobile-adult-ai-chat-apps",
+    title: "Best Mobile Adult AI Chat Apps",
+    description: "Adult AI software with a structured mobile-app signal, ranked by chat fit, pricing model, and policy visibility.",
+    seoTitle: "Best Mobile Adult AI Chat Apps",
+    seoDescription: "Compare mobile adult AI chat apps by app availability, chat support, pricing, and privacy notes.",
+    selector: "feature",
+    feature: "mobile",
+    useCase: "mobile adult AI access"
+  },
+  {
+    slug: "ai-tools-with-video-generation",
+    title: "Best AI Tools with Video Generation",
+    description: "Software records with structured video-generation support, ranked by pricing model, web access, and policy notes.",
+    seoTitle: "Best AI Tools with Video Generation",
+    seoDescription: "Compare AI video-generation tools by pricing, web access, feature coverage, and policy visibility.",
+    selector: "feature",
+    feature: "video",
+    useCase: "AI video-generation software"
+  },
+  {
+    slug: "anime-ai-character-tools",
+    title: "Best Anime AI Character Tools",
+    description: "Tools with a structured anime-style signal, ranked by character fit, image or chat support, pricing, and policy notes.",
+    seoTitle: "Best Anime AI Character Tools",
+    seoDescription: "Compare anime AI character tools by style support, features, pricing, and policy notes.",
+    selector: "feature",
+    feature: "anime",
+    useCase: "anime character creation"
+  },
+  {
+    slug: "realistic-ai-image-tools",
+    title: "Best Realistic AI Image Tools",
+    description: "Image-capable tools with a structured realistic-style signal, ranked by pricing, web access, and policy visibility without hosting media.",
+    seoTitle: "Best Realistic AI Image Tools",
+    seoDescription: "Compare realistic AI image tools by style support, pricing, web access, and policy notes.",
+    selector: "feature",
+    feature: "realistic",
+    useCase: "realistic-style AI image workflows"
+  },
+  {
+    slug: "ai-tools-with-free-trials",
+    title: "Best AI Tools with Free Trials",
+    description: "Tools with a structured free-trial signal, ranked by feature coverage, pricing model, and policy notes.",
+    seoTitle: "Best AI Tools with Free Trials",
+    seoDescription: "Compare AI tools with free trials by features, pricing model, privacy signals, and policy visibility.",
+    selector: "feature",
+    feature: "free-trial",
+    useCase: "low-friction AI tool evaluation"
+  },
+  {
+    slug: "adult-ai-tools-with-free-access",
+    title: "Best Adult AI Tools with Free Access",
+    description: "Adult AI software with a structured free-plan or free-trial signal, ranked by feature coverage, pricing, and policy notes.",
+    seoTitle: "Best Adult AI Tools with Free Access",
+    seoDescription: "Compare adult AI tools with free plans or trials by features, pricing, policy notes, and privacy signals.",
+    selector: "feature",
+    feature: "free-access",
+    useCase: "free-access adult AI evaluation"
+  },
+  {
+    slug: "adult-ai-tools-with-card-payments",
+    title: "Best Adult AI Tools with Card Payments",
+    description: "Adult AI software with a structured card-payment signal, ranked by pricing model, feature coverage, and policy visibility.",
+    seoTitle: "Best Adult AI Tools with Card Payments",
+    seoDescription: "Compare adult AI tools with card payments by pricing, features, policy notes, and privacy signals.",
+    selector: "feature",
+    feature: "card",
+    useCase: "card-supported adult AI buying"
+  },
+  {
+    slug: "subscription-adult-ai-tools",
+    title: "Best Subscription Adult AI Tools",
+    description: "Subscription-model adult AI tools ranked by structured feature coverage, free-path signals, and policy visibility.",
+    seoTitle: "Best Subscription Adult AI Tools",
+    seoDescription: "Compare subscription adult AI tools by features, free access, payment signals, and policy notes.",
+    selector: "feature",
+    feature: "subscription",
+    useCase: "subscription adult AI software"
+  },
+  {
+    slug: "credit-based-ai-image-tools",
+    title: "Best Credit-Based AI Image Tools",
+    description: "Image-capable tools using a structured credit pricing model, ranked by feature support, web access, and policy notes.",
+    seoTitle: "Best Credit-Based AI Image Tools",
+    seoDescription: "Compare credit-based AI image tools by pricing, feature coverage, web access, and policy visibility.",
+    selector: "feature",
+    feature: "credits",
+    useCase: "credit-based AI image software"
+  },
+  {
+    slug: "web-based-adult-ai-tools",
+    title: "Best Web-Based Adult AI Tools",
+    description: "Adult AI software with a structured web-app signal, ranked by feature coverage, pricing model, and policy notes.",
+    seoTitle: "Best Web-Based Adult AI Tools",
+    seoDescription: "Compare web-based adult AI tools by features, pricing, privacy signals, and policy visibility.",
+    selector: "feature",
+    feature: "web",
+    useCase: "web-based adult AI software"
+  },
+  {
+    slug: "adult-ai-tools-with-rich-interaction",
+    title: "Best Adult AI Tools with Rich Interaction",
+    description: "Adult AI software with structured voice, image, or character-creation signals, ranked by pricing and policy visibility.",
+    seoTitle: "Best Adult AI Tools with Rich Interaction",
+    seoDescription: "Compare adult AI tools with richer interaction signals by features, pricing, and policy notes.",
+    selector: "feature",
+    feature: "rich-interaction",
+    useCase: "richer adult AI interaction"
+  },
+  {
+    slug: "image-and-chat-ai-tools",
+    title: "Best Image and Chat AI Tools",
+    description: "Tools with both structured image-generation and NSFW-chat signals, ranked by pricing, feature coverage, and policy visibility.",
+    seoTitle: "Best Image and Chat AI Tools",
+    seoDescription: "Compare AI tools with image and chat support by pricing, features, privacy, and policy notes.",
+    selector: "feature",
+    feature: "image-chat",
+    useCase: "combined image and chat workflows"
+  },
+  {
+    slug: "private-ai-roleplay-tools",
+    title: "Best Private AI Roleplay Tools",
+    description: "Roleplay-capable tools with structured private-chat and character-creation signals, ranked by pricing and policy notes.",
+    seoTitle: "Best Private AI Roleplay Tools",
+    seoDescription: "Compare private AI roleplay tools by character creation, pricing, privacy signals, and policy notes.",
+    selector: "feature",
+    feature: "private-roleplay",
+    useCase: "privacy-conscious AI roleplay"
+  },
+  {
+    slug: "character-creation-ai-tools",
+    title: "Best Character Creation AI Tools",
+    description: "Tools with a structured character-creation signal, ranked by roleplay fit, pricing, free access, and policy visibility.",
+    seoTitle: "Best Character Creation AI Tools",
+    seoDescription: "Compare character creation AI tools by creation support, pricing, free access, and privacy signals.",
+    selector: "feature",
+    feature: "character",
+    useCase: "AI character creation"
+  },
+  {
+    slug: "image-capable-adult-ai-tools",
+    title: "Best Image-Capable Adult AI Tools",
+    description: "Adult AI software with a structured image-generation signal, ranked by pricing, style support, and policy visibility without hosting media.",
+    seoTitle: "Best Image-Capable Adult AI Tools",
+    seoDescription: "Compare image-capable adult AI tools by features, pricing, style signals, and policy notes.",
+    selector: "feature",
+    feature: "image",
+    useCase: "image-capable adult AI software"
   }
 ] as const satisfies readonly BestPageConfig[];
 
@@ -2029,8 +2319,10 @@ export function getCategoryBySlug(slug: string) {
 }
 
 export function getCategoryTools(slug: string) {
+  const category = getCategoryBySlug(slug);
+
   return directoryTools
-    .filter((tool) => tool.categorySlugs.includes(slug))
+    .filter((tool) => (category?.toolPredicate ? category.toolPredicate(tool) : tool.categorySlugs.includes(slug)))
     .sort((toolA, toolB) => (toolB.editorScore ?? 0) - (toolA.editorScore ?? 0) || toolA.name.localeCompare(toolB.name));
 }
 
@@ -2300,6 +2592,57 @@ export function getIndexableBestPageSlugs() {
 }
 
 function getBestPageCandidateTools(config: BestPageConfig) {
+  if (config.selector === "feature") {
+    const feature = config.feature;
+
+    return directoryTools.filter((tool) => {
+      switch (feature) {
+        case "free-girlfriend":
+          return tool.categorySlugs.includes("ai-girlfriend-apps") && (tool.hasFreePlan || tool.hasFreeTrial);
+        case "free-roleplay":
+          return tool.categorySlugs.includes("character-roleplay-ai") && (tool.hasFreePlan || tool.hasFreeTrial);
+        case "voice":
+          return tool.supportsVoice;
+        case "mobile":
+          return tool.hasMobileApp;
+        case "video":
+          return tool.supportsVideoGeneration;
+        case "anime":
+          return tool.supportsAnimeStyle;
+        case "realistic":
+          return tool.supportsRealisticStyle;
+        case "free-trial":
+          return tool.hasFreeTrial;
+        case "paypal":
+          return tool.acceptsPaypal;
+        case "card":
+          return tool.acceptsCard;
+        case "subscription":
+          return tool.pricingModel === "subscription";
+        case "credits":
+          return tool.pricingModel === "credits";
+        case "web":
+          return tool.hasWebApp;
+        case "phone":
+          return tool.supportsPhoneCall;
+        case "image-chat":
+          return tool.supportsImageGeneration && tool.supportsNsfwChat;
+        case "private-roleplay":
+          return tool.categorySlugs.includes("private-adult-ai-chat") && tool.supportsCharacterCreation;
+        case "character":
+          return tool.supportsCharacterCreation;
+        case "image":
+          return tool.supportsImageGeneration;
+        case "free-access":
+          return tool.hasFreePlan || tool.hasFreeTrial;
+        case "rich-interaction":
+          return tool.supportsVoice || tool.supportsImageGeneration || tool.supportsCharacterCreation;
+        default:
+          return false;
+      }
+    });
+  }
+
   if (config.selector === "free-nsfw-chat") {
     return directoryTools.filter(
       (tool) => tool.supportsNsfwChat && (tool.hasFreePlan || tool.hasFreeTrial)

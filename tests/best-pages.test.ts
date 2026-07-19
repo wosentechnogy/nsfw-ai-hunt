@@ -60,6 +60,25 @@ describe("best-of page data helpers", () => {
 
     expect(slugs).toContain("nsfw-ai-chatbots");
     expect(slugs).not.toContain("nsfw-ai-tools-that-accept-crypto");
+    expect(slugs).toEqual(
+      expect.arrayContaining([
+        "free-nsfw-ai-girlfriend-apps",
+        "mobile-ai-companions",
+        "ai-tools-with-image-support",
+        "character-creation-ai-tools",
+        "adult-ai-tools-with-free-access"
+      ])
+    );
+
+    for (const slug of [
+      "voice-ai-chat-tools",
+      "adult-ai-tools-with-free-access",
+      "private-ai-roleplay-tools",
+      "image-and-chat-ai-tools"
+    ]) {
+      expect(getBestPageData(slug)?.rankingRows.length, `${slug} should have a useful ranking`).toBeGreaterThan(2);
+    }
+    expect(slugs.length).toBeGreaterThanOrEqual(30);
   });
 });
 
